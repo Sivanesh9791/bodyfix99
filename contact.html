@@ -33,64 +33,90 @@
 </head>
 <body>
   <div class="mobile-nav__overlay" id="mobileOverlay"></div>
-  <nav class="mobile-nav" id="mobileNav">
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
-    <a href="index.html">Home</a><a href="sciatica-treatment.html">Sciatica</a><a href="lower-back-pain.html">Lower Back</a><a href="neck-shoulder-pain.html">Neck & Shoulder</a><a href="concussion-recovery.html">Concussion</a><a href="headaches-migraines.html">Headaches</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a><a href="http://ramizosteopath.setmore.com/r" target="_blank" class="mobile-nav__book">Book Now</a>
+    <a href="index.html" >Home</a>
+    <a href="sciatica-treatment.html">Sciatica Treatment</a>
+    <a href="lower-back-pain.html">Lower Back Pain</a>
+    <a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a>
+    <a href="concussion-recovery.html">Concussion Recovery</a>
+    <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="mobile-nav__book">Book Now</a>
   </nav>
-  <header class="navbar" id="mainNavbar">
+<header class="navbar" id="mainNavbar">
     <div class="navbar__inner">
-      <a href="index.html" class="navbar__brand"><div class="navbar__logo">BODYFIX<span>99</span></div><div class="navbar__sub">Osteopathic Manual Therapy</div></a>
-      <nav class="navbar__links">
-        <a href="index.html">Home</a><a href="sciatica-treatment.html">Sciatica</a><a href="lower-back-pain.html">Lower Back</a><a href="neck-shoulder-pain.html">Neck & Shoulder</a>
-        <a href="concussion-recovery.html">Concussion Recovery</a><a href="headaches-migraines.html">Headaches & Migraines</a>
-        <a href="about.html">About</a><a href="contact.html" class="active">Contact</a>
+      <!-- Logo -->
+      <a href="index.html" class="navbar__brand">
+        <img src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png" alt="Bodyfix99 Logo" class="brand-logo" style="height: 55px; width: auto; object-fit: contain;">
+        <div class="navbar__logo">BODYFIX<span>99</span></div>
+        
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav class="navbar__links" aria-label="Main navigation">
+        <a href="index.html" >Home</a>
+        <a href="sciatica-treatment.html">Sciatica Treatment</a>
+        <a href="lower-back-pain.html">Lower Back Pain</a>
+        <a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a>
+        <a href="concussion-recovery.html">Concussion Recovery</a>
+        <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
+
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
-      <a href="http://ramizosteopath.setmore.com/r" target="_blank" class="btn btn-book-now navbar__cta">Book Now</a>
-      <button class="hamburger" id="hamburgerBtn"><span class="hamburger__line"></span><span class="hamburger__line"></span><span class="hamburger__line"></span></button>
+
+      <!-- Book Now CTA -->
+      <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+        class="btn btn-book-now navbar__cta">Book Now</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="mobileNav">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
     </div>
   </header>
-
   <main>
     <section class="page-hero">
       <div class="container page-hero__content fade-in"><h1 class="page-hero__title">Contact Bodyfix99</h1></div>
     </section>
-
     <section class="section">
       <div class="container">
         <div class="contact-layout">
-          <!-- Left: Info -->
           <div class="contact-info-grid">
             <div class="contact-card fade-in delay-1">
-              <div class="contact-card__icon">📍</div>
+              <div class="contact-card__icon"><span style="color:#c9a84c; margin-right:8px;">&#9679;</span></div>
               <div class="contact-card__content">
                 <h3>Location</h3>
                 <p>Nomad Hotel, 10006 MacDonald Avenue<br>Fort McMurray, Alberta T9H 1S8</p>
               </div>
             </div>
             <div class="contact-card fade-in delay-2">
-              <div class="contact-card__icon">📞</div>
+              <div class="contact-card__icon"><span style="color:#c9a84c; margin-right:8px;">&#9742;</span></div>
               <div class="contact-card__content">
                 <h3>Phone</h3>
                 <p><a href="tel:+17803356705">780-335-6705</a><br>(Call or Text)</p>
               </div>
             </div>
             <div class="contact-card fade-in delay-3">
-              <div class="contact-card__icon">✉️</div>
+              <div class="contact-card__icon"><span style="color:#c9a84c; margin-right:8px;">&#9993;</span></div>
               <div class="contact-card__content">
                 <h3>Email</h3>
-                <p><a href="mailto:ramizosteopath@yahoo.com">ramizosteopath@yahoo.com</a></p>
+                <p><a href="mailto:fixme@bodyfix99.com">fixme@bodyfix99.com</a></p>
               </div>
             </div>
             <div class="contact-card fade-in delay-4">
-              <div class="contact-card__icon">🕐</div>
+              <div class="contact-card__icon"><span style="color:#c9a84c; margin-right:8px;">&#9201;</span></div>
               <div class="contact-card__content">
                 <h3>Hours</h3>
                 <p>Open 24 Hours</p>
               </div>
             </div>
           </div>
-
-          <!-- Right: Form -->
           <div class="contact-form-wrapper fade-in delay-2">
             <h2 style="margin-bottom:var(--space-md);font-size:1.75rem;">Send a Message</h2>
             <form action="https://formspree.io/f/xeewgkjy" method="POST" class="contact-form">
@@ -127,64 +153,66 @@
               <button type="submit" class="form-submit-btn">SEND MESSAGE</button>
               <p class="form-note">For urgent requests, please text <strong>780-335-6705</strong> directly.</p>
             </form>
-            <div id="form-success" style="display:none; text-align:center; padding:40px 30px; color:#c9a84c; font-family:'DM Sans',sans-serif; font-size:18px; letter-spacing:1px;">
-                ✓ Message Sent Successfully!<br>
-                <span style="font-size:14px; color:#a0a0a0; margin-top:10px; display:block;">
-                Ramiz will get back to you within 24 hours.
-                </span>
-            </div>
           </div>
         </div>
-
         <div class="map-container fade-in">
           <iframe title="Map to Bodyfix99" src="https://maps.google.com/maps?q=10006+MacDonald+Avenue+Fort+McMurray+Alberta+T9H+1S8&t=m&z=15&output=embed&iwloc=near" allowfullscreen="true" loading="lazy"></iframe>
         </div>
       </div>
     </section>
   </main>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services Details</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__col"><div class="footer__logo">BODYFIX<span>99</span></div><p class="footer__tagline">Root-cause osteopathic care for chronic pain, mobility &amp; injuries in Fort McMurray.</p></div>
-        <div class="footer__col"><h4 class="footer__heading">Quick Links</h4><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div class="footer__col"><h4 class="footer__heading">Services</h4><ul class="footer__links"><li><a href="sciatica-treatment.html">Sciatica Treatment</a></li><li><a href="lower-back-pain.html">Lower Back Pain</a></li><li><a href="neck-shoulder-pain.html">Neck &amp; Shoulder</a></li><li><a href="concussion-recovery.html">Concussion</a></li><li><a href="headaches-migraines.html">Headaches</a></li></ul></div>
-        <div class="footer__col"><h4 class="footer__heading">Contact</h4><ul class="footer__contact"><li><span>📍</span><span>Nomad Hotel, 10006 MacDonald Ave<br>Fort McMurray, AB</span></li><li><span>📞</span><a href="tel:+17803356705">780-335-6705</a></li><li><span>✉️</span><a href="mailto:ramizosteopath@yahoo.com">ramizosteopath@yahoo.com</a></li></ul></div>
+        <!-- Col 3: Services -->
+        <div class="footer__col">
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="sciatica-treatment.html">Sciatica Treatment</a></li>
+            <li><a href="lower-back-pain.html">Lower Back Pain</a></li>
+            <li><a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a></li>
+            <li><a href="concussion-recovery.html">Concussion Recovery</a></li>
+            <li><a href="headaches-migraines.html">Headaches &amp; Migraines</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer__col">
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__contact">
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true"><span style="color:#c9a84c; margin-right:8px;">&#9679;</span></span>
+              <span>Nomad Hotel, 10006 MacDonald Avenue,<br>Fort McMurray, Alberta T9H 1S8</span>
+            </li>
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true"><span style="color:#c9a84c; margin-right:8px;">&#9742;</span></span>
+              <a href="tel:+17803356705">780-335-6705</a>
+            </li>
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true"><span style="color:#c9a84c; margin-right:8px;">&#9993;</span></span>
+              <a href="mailto:fixme@bodyfix99.com">fixme@bodyfix99.com</a>
+            </li>
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true"><span style="color:#c9a84c; margin-right:8px;">&#9201;</span></span>
+              <span>9:00 AM â€“ 9:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.footer__grid -->
+    </div><!-- /.container -->
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Bodyfix99.com. All Rights Reserved.</p>
       </div>
     </div>
-    <div class="footer__bottom"><div class="container"><p>&copy; 2026 Bodyfix99.com. All Rights Reserved.</p></div></div>
   </footer>
   <script src="js/main.js"></script>
-  <script>
-  const contactForm = document.querySelector('.contact-form');
-  if(contactForm) {
-      contactForm.addEventListener('submit', async function(e) {
-          e.preventDefault();
-          const submitBtn = contactForm.querySelector('button[type="submit"]');
-          submitBtn.textContent = 'SENDING...';
-          submitBtn.disabled = true;
-          const data = new FormData(contactForm);
-          try {
-              const response = await fetch('https://formspree.io/f/xeewgkjy', {
-                  method: 'POST',
-                  body: data,
-                  headers: { 'Accept': 'application/json' }
-              });
-              if (response.ok) {
-                  contactForm.style.display = 'none';
-                  document.getElementById('form-success').style.display = 'block';
-              } else {
-                  submitBtn.textContent = 'SEND MESSAGE';
-                  submitBtn.disabled = false;
-                  alert('Something went wrong. Please try again.');
-              }
-          } catch(err) {
-              submitBtn.textContent = 'SEND MESSAGE';
-              submitBtn.disabled = false;
-              alert('Something went wrong. Please try again.');
-          }
-      });
-  }
-  </script>
 </body>
 </html>
