@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Resources | Bodyfix99</title>
+  <meta name="description" content="Read our latest insights on manual therapy, pain relief, and holistic health.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-hero { position:relative; padding-top:calc(var(--navbar-height) + 5rem); padding-bottom:5rem; background-image:url('https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg'); background-size:cover; background-position:center; background-attachment:fixed; overflow:hidden; }
+    .page-hero::before { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,rgba(10,10,10,.88) 0%,rgba(10,10,10,.72) 60%,rgba(10,10,10,.95) 100%); z-index:1; }
+    .page-hero__content { position:relative; z-index:2; text-align:center; }
+    .page-hero__title { font-family:var(--font-heading); font-size:clamp(2.5rem,5vw,3.75rem); font-weight:700; color:var(--text-primary); line-height:1.1; margin-bottom:var(--space-md); text-shadow:0 4px 24px rgba(0,0,0,.8); }
+
+
+    .newsletter-strip { background:var(--secondary-bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding-block:var(--space-xl); text-align:center; position:relative; overflow:hidden; }
+    .newsletter-strip::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at center,rgba(201,168,76,.08) 0%,transparent 70%); pointer-events:none; }
+    .newsletter-form { display:flex; max-width:500px; margin:0 auto; gap:.5rem; margin-top:var(--space-md); position:relative; z-index:2; }
+    @media (max-width:600px) { .newsletter-form { flex-direction:column; } }
+    .newsletter-form input { flex-grow:1; background:var(--bg-color); border:1px solid var(--border); border-radius:var(--radius-sm); padding:.8rem 1rem; color:var(--text-primary); font-size:1rem; outline:none; transition:border-color var(--transition); }
+    .newsletter-form input:focus { border-color:var(--gold); }
+  </style>
+</head>
+<body>
+  <div class="mobile-nav__overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    <a href="index.html">Home</a><a href="sciatica-treatment.html">Sciatica</a><a href="lower-back-pain.html">Lower Back</a><a href="neck-shoulder-pain.html">Neck & Shoulder</a><a href="concussion-recovery.html">Concussion</a><a href="headaches-migraines.html">Headaches</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="http://ramizosteopath.setmore.com/r" target="_blank" class="mobile-nav__book">Book Now</a>
+  </nav>
+  <header class="navbar" id="mainNavbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand"><div class="navbar__logo">BODYFIX<span>99</span></div><div class="navbar__sub">Osteopathic Manual Therapy</div></a>
+      <nav class="navbar__links">
+        <a href="index.html">Home</a><a href="sciatica-treatment.html">Sciatica</a><a href="lower-back-pain.html">Lower Back</a><a href="neck-shoulder-pain.html">Neck & Shoulder</a>
+        <a href="concussion-recovery.html">Concussion Recovery</a><a href="headaches-migraines.html">Headaches & Migraines</a>
+        <a href="about.html">About</a><a href="contact.html">Contact</a>
+      </nav>
+      <a href="http://ramizosteopath.setmore.com/r" target="_blank" class="btn btn-book-now navbar__cta">Book Now</a>
+      <button class="hamburger" id="hamburgerBtn"><span class="hamburger__line"></span><span class="hamburger__line"></span><span class="hamburger__line"></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero__content fade-in"><h1 class="page-hero__title">Blog & Resources</h1></div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-grid">
+          <!-- Post 1 -->
+          <a href="https://bodyfix99.com/stress-and-tension-relief-through-manual-therapy-beyond-muscle-relaxation/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+            <article class="blog-card fade-in delay-1">
+              <div class="blog-card__image"><img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg" alt="Stress and Tension Relief"></div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta"><span>Dec 14</span><span>Wellness</span></div>
+                <h3 class="blog-card__title">Stress and Tension Relief Through Manual Therapy: Beyond Muscle Relaxation</h3>
+                <p class="blog-card__excerpt">Why simply relaxing a muscle doesn't solve chronic stress, and how treating the fascia and nervous system leads to profound structural relief.</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Post 2 -->
+          <a href="https://bodyfix99.com/unlock-lasting-pain-relief-targeting-the-root-cause-with-osteopathic-care/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+            <article class="blog-card fade-in delay-2">
+              <div class="blog-card__image"><img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765634463.jpeg" alt="Osteopathic Care"></div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta"><span>Dec 13</span><span>Osteopathy</span></div>
+                <h3 class="blog-card__title">Unlock Lasting Pain Relief: Targeting the Root Cause with Osteopathic Care</h3>
+                <p class="blog-card__excerpt">Discover the interconnected mechanics of the human body, and learn why pain at the destination is rarely where the problem began.</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Post 3 -->
+          <a href="https://bodyfix99.com/boost-your-workout-integrate-osteopathy-for-injury-free-fitness/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+            <article class="blog-card fade-in delay-3">
+              <div class="blog-card__image"><img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765566086.jpeg" alt="Fitness and Osteopathy"></div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta"><span>Dec 12</span><span>Fitness</span></div>
+                <h3 class="blog-card__title">Boost Your Workout: Integrate Osteopathy for Injury-Free Fitness</h3>
+                <p class="blog-card__excerpt">How balancing your pelvic floor, ribcage mobility, and spinal alignment can immediately boost your strength and prevent workout injuries.</p>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="newsletter-strip fade-in">
+      <div class="container">
+        <h2>Stay Informed About Your Health</h2>
+        <p style="color:var(--text-secondary);">Join our newsletter for practical tips on managing pain and improving mobility.</p>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+          <input type="email" placeholder="Your email address" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col"><div class="footer__logo">BODYFIX<span>99</span></div><p class="footer__tagline">Root-cause osteopathic care for chronic pain, mobility &amp; injuries in Fort McMurray.</p></div>
+        <div class="footer__col"><h4 class="footer__heading">Quick Links</h4><ul class="footer__links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer__col"><h4 class="footer__heading">Services</h4><ul class="footer__links"><li><a href="sciatica-treatment.html">Sciatica Treatment</a></li><li><a href="lower-back-pain.html">Lower Back Pain</a></li><li><a href="neck-shoulder-pain.html">Neck &amp; Shoulder</a></li><li><a href="concussion-recovery.html">Concussion</a></li><li><a href="headaches-migraines.html">Headaches</a></li></ul></div>
+        <div class="footer__col"><h4 class="footer__heading">Contact</h4><ul class="footer__contact"><li><span>📍</span><span>Nomad Hotel, 10006 MacDonald Ave<br>Fort McMurray, AB</span></li><li><span>📞</span><a href="tel:+17803356705">780-335-6705</a></li><li><span>✉️</span><a href="mailto:ramizosteopath@yahoo.com">ramizosteopath@yahoo.com</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer__bottom"><div class="container"><p>&copy; 2026 Bodyfix99.com. All Rights Reserved.</p></div></div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

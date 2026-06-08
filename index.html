@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bodyfix99 | Osteopathic Manual Therapy in Fort McMurray</title>
+  <meta name="description" content="Precise, root-cause osteopathic care for chronic pain, stubborn injuries & mobility issues in Fort McMurray.">
+  
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* PAGE-SPECIFIC STYLES FOR INDEX.HTML */
+    
+    /* ── 1. Hero Section ───────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--navbar-height);
+      overflow: hidden;
+      background-image: url('https://bodyfix99.com/wp-content/uploads/2026/02/man-senses-back-pain_1214360-6661.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.9) 0%,
+        rgba(10, 10, 10, 0.6) 50%,
+        rgba(10, 10, 10, 0.95) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .hero__title {
+      font-size: clamp(3rem, 6vw, 4.5rem); /* 72px max */
+      margin-bottom: var(--space-md);
+      line-height: 1.1;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    }
+
+    .hero__subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      color: var(--text-primary);
+      margin-bottom: var(--space-xl);
+      max-width: 700px;
+      margin-inline: auto;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    
+    .hero__buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      align-items: center;
+      margin-bottom: var(--space-lg);
+    }
+    
+    .hero__scroll-indicator {
+      position: absolute;
+      bottom: var(--space-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      animation: bounce 2s infinite;
+    }
+    
+    .hero__scroll-indicator svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-10px) translateX(-50%); }
+      60% { transform: translateY(-5px) translateX(-50%); }
+    }
+
+    @media (max-width: 600px) {
+      .hero__buttons { flex-direction: column; width: 100%; }
+      .hero__buttons .btn { width: 100%; justify-content: center; }
+    }
+
+    /* ── 2. Trust Bar ──────────────────────────────── */
+    .trust-bar {
+      background: #1a1a1a;
+      border-bottom: 1px solid var(--border);
+      padding-block: var(--space-md);
+    }
+
+    .trust-bar__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .trust-item svg {
+      color: var(--gold);
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 900px) {
+      .trust-bar__inner { justify-content: center; gap: var(--space-lg); }
+    }
+    
+    @media (max-width: 600px) {
+      .trust-item { width: 100%; justify-content: center; }
+    }
+
+    /* ── 3. Specialties ────────────────────────────── */
+    .specialty-card {
+      border-top: 3px solid var(--gold);
+      text-align: center;
+      padding: var(--space-lg);
+    }
+    
+    .specialty-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0;
+    }
+
+    .specialties-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      max-width: 800px;
+      margin-inline: auto;
+      margin-top: var(--space-lg);
+    }
+    
+    @media (max-width: 768px) {
+      .specialties-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    /* ── 4. About Preview ──────────────────────────── */
+    .about-preview {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .about-image {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .about-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-md);
+      transform: translate(15px, 15px);
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .credentials-list {
+      margin-block: var(--space-lg);
+    }
+
+    .credentials-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: var(--space-sm);
+      color: var(--text-secondary);
+    }
+
+    .credentials-list svg {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .about-preview { grid-template-columns: 1fr; }
+      .about-image { order: -1; margin-bottom: var(--space-md); }
+    }
+
+    /* ── 5. Why Choose Us ──────────────────────────── */
+    .approach-card {
+      height: 100%;
+    }
+    
+    .approach-card h3 {
+      font-size: 1.25rem;
+    }
+
+    /* ── 6. Services ───────────────────────────────── */
+    .service-card {
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-card__img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-card__img {
+      transform: scale(1.05);
+    }
+
+    .service-card__content {
+      padding: var(--space-md) var(--space-lg);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-card h3 { font-size: 1.3rem; }
+
+    .service-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--gold);
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-top: auto;
+    }
+
+    .service-card__link svg {
+      transition: transform var(--transition);
+    }
+
+    .service-card:hover .service-card__link svg {
+      transform: translateX(4px);
+    }
+
+    /* Used to center the last 2 cards in a 3-col grid */
+    .services-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      max-width: 800px;
+      margin-inline: auto;
+      margin-top: var(--space-lg);
+    }
+    
+    @media (max-width: 768px) {
+      .services-grid-bottom { grid-template-columns: 1fr; }
+    }
+
+    /* ── 7. CTA Section ────────────────────────────── */
+    .cta-section {
+      position: relative;
+      padding-block: var(--space-2xl);
+      text-align: center;
+      background: var(--secondary-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(201,168,76,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-section h2 { margin-bottom: var(--space-sm); font-size: clamp(2rem, 4vw, 3.5rem); }
+    .cta-section p { margin-inline: auto; font-size: 1.15rem; margin-bottom: var(--space-lg); }
+
+    /* ── 8. Blog Preview ───────────────────────────── */
+    .blog-card {
+      padding: 0;
+      overflow: hidden;
+      background: transparent;
+      border: none;
+    }
+
+    .blog-card__img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-md);
+      transition: box-shadow var(--transition);
+    }
+    
+    .blog-card:hover .blog-card__img {
+      box-shadow: var(--shadow-gold);
+    }
+
+    .blog-card__date {
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-sm);
+      display: block;
+    }
+
+    /* ── 9. Contact Strip ──────────────────────────── */
+    .contact-strip {
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      padding-block: var(--space-lg);
+    }
+
+    .contact-strip__inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      text-align: center;
+    }
+
+    .contact-strip__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+    }
+
+    .contact-strip__item svg {
+      color: var(--gold);
+      width: 28px;
+      height: 28px;
+    }
+
+    .contact-strip__item a { color: var(--text-primary); }
+    .contact-strip__item a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .contact-strip__inner { grid-template-columns: 1fr; gap: var(--space-xl); }
+      .contact-strip__item { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile overlay (behind mobile nav drawer) -->
+  <div class="mobile-nav__overlay" id="mobileOverlay"></div>
+
+  <!-- Mobile slide-in nav -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
+    <a href="index.html" class="active">Home</a>
+    <a href="sciatica-treatment.html">Sciatica Treatment</a>
+    <a href="lower-back-pain.html">Lower Back Pain</a>
+    <a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a>
+    <a href="concussion-recovery.html">Concussion Recovery</a>
+    <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="mobile-nav__book">Book Now</a>
+  </nav>
+
+  <header class="navbar" id="mainNavbar">
+    <div class="navbar__inner">
+      <!-- Logo -->
+      <a href="index.html" class="navbar__brand">
+        <div class="navbar__logo">BODYFIX<span>99</span></div>
+        <div class="navbar__sub">Osteopathic Manual Therapy</div>
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav class="navbar__links" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="sciatica-treatment.html">Sciatica Treatment</a>
+        <a href="lower-back-pain.html">Lower Back Pain</a>
+        <a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a>
+        <a href="concussion-recovery.html">Concussion Recovery</a>
+        <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
+
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Book Now CTA -->
+      <a href="http://ramizosteopath.setmore.com/r"
+         target="_blank" rel="noopener"
+         class="btn btn-book-now navbar__cta">Book Now</a>
+
+      <!-- Hamburger (mobile only) -->
+      <button class="hamburger" id="hamburgerBtn"
+              aria-label="Toggle menu" aria-expanded="false"
+              aria-controls="mobileNav">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. HERO SECTION -->
+    <section class="hero">
+      <div class="container hero__content fade-in">
+        <h1 class="hero__title">When Pain Keeps Coming Back, The Problem Isn't You</h1>
+        <p class="hero__subtitle">Precise, root-cause osteopathic care for chronic pain, stubborn injuries &amp; mobility issues in Fort McMurray.</p>
+        
+        <div class="hero__buttons">
+          <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Your Session</a>
+          <a href="#services" class="btn btn-secondary btn-lg">Learn More</a>
+        </div>
+        
+        <div class="divider-gold centered"></div>
+      </div>
+      
+      <div class="hero__scroll-indicator fade-in delay-2">
+        <span>Scroll</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 2. TRUST BAR -->
+    <div class="trust-bar fade-in">
+      <div class="container">
+        <div class="trust-bar__inner">
+          <div class="trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Board Certified Practitioner
+          </div>
+          <div class="trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            90-Min In-Depth Sessions
+          </div>
+          <div class="trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            Root-Cause Approach
+          </div>
+          <div class="trust-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Fort McMurray's Go-To for Hard Cases
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. SPECIALTIES SECTION -->
+    <section class="section" id="specialties">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <span class="eyebrow">Focused Expertise</span>
+          <h2 class="heading-underline centered">Specializing In</h2>
+        </div>
+        
+        <div class="grid grid-3">
+          <div class="card specialty-card fade-in delay-1">
+            <h3>Sciatic &amp; Low Back Tension</h3>
+          </div>
+          <div class="card specialty-card fade-in delay-2">
+            <h3>Chronic Neck &amp; Jaw Rigidity</h3>
+          </div>
+          <div class="card specialty-card fade-in delay-3">
+            <h3>Stubborn Shoulder &amp; Hip Injuries</h3>
+          </div>
+        </div>
+        
+        <div class="specialties-grid-2">
+          <div class="card specialty-card fade-in delay-4">
+            <h3>Post-Concussion Structural Support</h3>
+          </div>
+          <div class="card specialty-card fade-in delay-5">
+            <h3>Complex Postural Imbalances</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ABOUT PREVIEW SECTION -->
+    <section class="section section-lg" style="background-color: var(--secondary-bg);">
+      <div class="container">
+        <div class="about-preview">
+          <div class="about-content fade-in">
+            <span class="eyebrow">Meet The Practitioner</span>
+            <h2 class="heading-underline">About R. Nicholas Berisha</h2>
+            <p class="lead mt-md">My story didn't begin in a polished downtown practice. It began in Fort McMurray — with people who push their bodies to the limit every day. 12–14 hour shifts, deep fatigue, injuries that kept coming back no matter what they tried.</p>
+            
+            <ul class="credentials-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Member: Canadian Union of Osteopaths (CPMDQ)
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Member: Canadian Union of Kinesitherapists (CPMDQ)
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Designation: Osteopathic Manual Practitioner
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                Trained: London College of Osteopathy
+              </li>
+            </ul>
+            
+            <a href="about.html" class="btn btn-secondary mt-sm">Read Full Story</a>
+          </div>
+          <div class="about-image fade-in delay-2">
+            <img src="https://bodyfix99.com/wp-content/uploads/2026/02/osteoporosis-spine-scoliosis-sore-back-after-work-problems-with-spinal-cord-women_926199-4371862.jpg" alt="R. Nicholas Berisha, Osteopathic Manual Practitioner in clinic">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WHY CHOOSE US -->
+    <section class="section section-lg">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2 class="heading-underline centered">The Bodyfix99 Approach<br><span class="text-gold-lg">The Art of Transformation</span></h2>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card approach-card fade-in delay-1">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            </div>
+            <h3 class="card__title">Assessment Before Action</h3>
+            <p class="card__body">Every session starts with understanding your body as a whole, mapping the compensation patterns before any treatment begins.</p>
+          </div>
+          
+          <div class="card approach-card fade-in delay-2">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+            </div>
+            <h3 class="card__title">Precision Over Pressure</h3>
+            <p class="card__body">Targeted clinical techniques replace forceful treatments. We work with the nervous system rather than forcing tissues to release.</p>
+          </div>
+          
+          <div class="card approach-card fade-in delay-3">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9"></path><path d="M12 3v9"></path><path d="M21 12h-9"></path><path d="M12 12l8.5 8.5"></path></svg>
+            </div>
+            <h3 class="card__title">From Compensation to Balance</h3>
+            <p class="card__body">Releasing the patterns your body uses to cope, resetting your structural alignment so muscles can unguard naturally.</p>
+          </div>
+          
+          <div class="card approach-card fade-in delay-1">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h3 class="card__title">Restoring Function First</h3>
+            <p class="card__body">Pain reduction reliably follows improved function. By fixing how the joint operates, the surrounding pain dissipates.</p>
+          </div>
+          
+          <div class="card approach-card fade-in delay-2">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="6.5"></line></svg>
+            </div>
+            <h3 class="card__title">Treating the System Not the Spot</h3>
+            <p class="card__body">The source of pain is often far from where you feel it. We trace the kinetic chain to find the actual structural driver.</p>
+          </div>
+          
+          <div class="card approach-card fade-in delay-3">
+            <div class="card__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3 class="card__title">Long-Term Change</h3>
+            <p class="card__body">The goal is lasting transformation in how your body works, significantly reducing your dependency on manual therapy over time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SERVICES SECTION -->
+    <section class="section section-lg" id="services" style="background-color: var(--secondary-bg);">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <span class="eyebrow">Our Services</span>
+          <h2 class="heading-underline centered">Conditions We Treat</h2>
+        </div>
+
+        <!-- Top 3 cards -->
+        <div class="grid grid-3 mb-lg">
+          <!-- Sciatica -->
+          <div class="card service-card fade-in delay-1">
+            <img src="https://bodyfix99.com/wp-content/uploads/2026/02/woman-wearing-yellow-shirt-is-tying-her-shoe_170153-5093.jpg" alt="Sciatica mapping and treatment" class="service-card__img">
+            <div class="service-card__content">
+              <h3>Sciatica Treatment</h3>
+              <p class="card__body">Releasing spinal nerve compression and resetting pelvic rotation to permanently resolve shooting leg pain.</p>
+              <a href="sciatica-treatment.html" class="service-card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Lower Back Pain -->
+          <div class="card service-card fade-in delay-2">
+            <img src="https://bodyfix99.com/wp-content/uploads/2026/02/young-afro-american-young-man-suffering-from-backache-having-made-effort-isolated-wall_926199-3072065.jpg" alt="Lower back manual therapy" class="service-card__img">
+            <div class="service-card__content">
+              <h3>Lower Back Pain</h3>
+              <p class="card__body">Correcting lumbar facet lockouts and deep muscular guarding that causes chronic centralized back ache.</p>
+              <a href="lower-back-pain.html" class="service-card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Neck & Shoulder Pain -->
+          <div class="card service-card fade-in delay-3">
+            <img src="https://bodyfix99.com/wp-content/uploads/2026/02/what-causes-neck-pain-young-adults-body-parts_972478-2523.jpg" alt="Neck and shoulder mobility adjustments" class="service-card__img">
+            <div class="service-card__content">
+              <h3>Neck &amp; Shoulder Pain</h3>
+              <p class="card__body">Decompressing cervical vertebrae and re-balancing the shoulder girdle to eliminate stiffness and nerve impingement.</p>
+              <a href="neck-shoulder-pain.html" class="service-card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom 2 cards (centered) -->
+        <div class="services-grid-bottom">
+          <!-- Concussion Recovery -->
+          <div class="card service-card fade-in delay-1">
+            <img src="https://bodyfix99.com/wp-content/uploads/2026/02/back-pain-with-red-glowing-area-spine_1214360-6449.jpg" alt="Cranial osteopathy for concussion" class="service-card__img">
+            <div class="service-card__content">
+              <h3>Concussion Recovery</h3>
+              <p class="card__body">Gentle cranial mechanics and upper-cervical balancing to help your central nervous system re-stabilize post-trauma.</p>
+              <a href="concussion-recovery.html" class="service-card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Headaches & Migraines -->
+          <div class="card service-card fade-in delay-2">
+            <img src="https://bodyfix99.com/wp-content/uploads/2026/02/man-with-red-light-his-back-stands-with-his-back-his-back_659788-17885.jpg" alt="Relieving tension headaches" class="service-card__img">
+            <div class="service-card__content">
+              <h3>Headaches &amp; Migraines</h3>
+              <p class="card__body">Addressing suboccipital nerve entrapment and cranial suture strain to reduce headache frequency and severity.</p>
+              <a href="headaches-migraines.html" class="service-card__link">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CTA SECTION -->
+    <section class="cta-section">
+      <div class="container fade-in">
+        <h2 class="gradient-text" style="display:inline-block">Ready to Finally Fix the Root Cause?</h2>
+        <p>Book a 90-minute session with Fort McMurray's go-to osteopathic practitioner</p>
+        <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-primary btn-lg mt-sm">Book Now</a>
+      </div>
+    </section>
+
+    <!-- 8. BLOG PREVIEW -->
+    <section class="section section-lg">
+      <div class="container">
+        <div class="flex-between mb-xl fade-in">
+          <div>
+            <span class="eyebrow">Osteopathic Insights</span>
+            <h2 class="heading-underline mb-0">Latest From The Blog</h2>
+          </div>
+          <a href="https://bodyfix99.com/blogs/" target="_blank" class="btn btn-ghost">View All Posts</a>
+        </div>
+
+        <div class="grid grid-3">
+          <a href="https://bodyfix99.com/stress-and-tension-relief-through-manual-therapy-beyond-muscle-relaxation/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+            <article class="card blog-card fade-in delay-1">
+              <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg" alt="Manual therapy session" class="blog-card__img">
+              <span class="blog-card__date">October 12, 2025</span>
+              <h3 class="card__title">Stress and Tension Relief Through Manual Therapy: Beyond Muscle Relaxation</h3>
+            </article>
+          </a>
+
+          <a href="https://bodyfix99.com/unlock-lasting-pain-relief-targeting-the-root-cause-with-osteopathic-care/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+            <article class="card blog-card fade-in delay-2">
+              <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765634463.jpeg" alt="Spine anatomy chart" class="blog-card__img">
+              <span class="blog-card__date">September 28, 2025</span>
+              <h3 class="card__title">Unlock Lasting Pain Relief: Targeting the Root Cause with Osteopathic Care</h3>
+            </article>
+          </a>
+
+          <a href="https://bodyfix99.com/boost-your-workout-integrate-osteopathy-for-injury-free-fitness/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
+            <article class="card blog-card fade-in delay-3">
+              <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765566086.jpeg" alt="Gym runner" class="blog-card__img">
+              <span class="blog-card__date">September 05, 2025</span>
+              <h3 class="card__title">Boost Your Workout: Integrate Osteopathy for Injury-Free Fitness</h3>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CONTACT STRIP -->
+    <div class="contact-strip fade-in">
+      <div class="container">
+        <div class="contact-strip__inner">
+          <div class="contact-strip__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <div>
+              <strong>Clinic Location</strong>
+              <div>Nomad Hotel, 10006 MacDonald Avenue<br>Fort McMurray, AB T9H 1S8</div>
+            </div>
+          </div>
+          <div class="contact-strip__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <div>
+              <strong>Call or Text</strong>
+              <div><a href="tel:+17803356705">780-335-6705</a></div>
+            </div>
+          </div>
+          <div class="contact-strip__item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <div>
+              <strong>Email</strong>
+              <div><a href="mailto:ramizosteopath@yahoo.com">ramizosteopath@yahoo.com</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer__col">
+          <div class="footer__logo">BODYFIX<span>99</span></div>
+          <p class="footer__tagline">
+            Root-cause osteopathic care for chronic pain,
+            mobility &amp; injuries in Fort McMurray.
+          </p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Facebook" class="footer__social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                   viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="footer__social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                   viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                   aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="footer__social-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                   viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer__col">
+          <h4 class="footer__heading">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services Details</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer__col">
+          <h4 class="footer__heading">Services</h4>
+          <ul class="footer__links">
+            <li><a href="sciatica-treatment.html">Sciatica Treatment</a></li>
+            <li><a href="lower-back-pain.html">Lower Back Pain</a></li>
+            <li><a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a></li>
+            <li><a href="concussion-recovery.html">Concussion Recovery</a></li>
+            <li><a href="headaches-migraines.html">Headaches &amp; Migraines</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div class="footer__col">
+          <h4 class="footer__heading">Contact</h4>
+          <ul class="footer__contact">
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true">📍</span>
+              <span>Nomad Hotel, 10006 MacDonald Avenue,<br>Fort McMurray, Alberta T9H 1S8</span>
+            </li>
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true">📞</span>
+              <a href="tel:+17803356705">780-335-6705</a>
+            </li>
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true">✉️</span>
+              <a href="mailto:ramizosteopath@yahoo.com">ramizosteopath@yahoo.com</a>
+            </li>
+            <li>
+              <span class="footer__contact-icon" aria-hidden="true">🕐</span>
+              <span>Open: 24 Hours</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.footer__grid -->
+    </div><!-- /.container -->
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Bodyfix99.com. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
