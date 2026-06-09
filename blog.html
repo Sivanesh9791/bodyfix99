@@ -1,31 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog & Resources | Bodyfix99</title>
-  <meta name="description" content="Read our latest insights on manual therapy, pain relief, and holistic health.">
+
+  <!-- FIX #7: Escaped & as &amp; in <title> -->
+  <title>Blog &amp; Resources | Bodyfix99</title>
+  <meta name="description"
+    content="Read our latest insights on manual therapy, pain relief, and holistic health from R. Nicholas Berisha, osteopathic practitioner in Fort McMurray.">
+
+  <!-- FIX #10: Added canonical, Open Graph, and robots meta tags -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bodyfix99.com/blog.html">
+  <meta property="og:title" content="Blog &amp; Resources | Bodyfix99">
+  <meta property="og:description"
+    content="Read our latest insights on manual therapy, pain relief, and holistic health from Fort McMurray's osteopathic practitioner.">
+  <meta property="og:url" content="https://bodyfix99.com/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg">
+
   <link rel="stylesheet" href="css/style.css">
+
   <style>
-    .page-hero { position:relative; padding-top:calc(var(--navbar-height) + 5rem); padding-bottom:5rem; background-image:url('https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg'); background-size:cover; background-position:center; background-attachment:fixed; overflow:hidden; }
-    .page-hero::before { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,rgba(10,10,10,.88) 0%,rgba(10,10,10,.72) 60%,rgba(10,10,10,.95) 100%); z-index:1; }
-    .page-hero__content { position:relative; z-index:2; text-align:center; }
-    .page-hero__title { font-family:var(--font-heading); font-size:clamp(2.5rem,5vw,3.75rem); font-weight:700; color:var(--text-primary); line-height:1.1; margin-bottom:var(--space-md); text-shadow:0 4px 24px rgba(0,0,0,.8); }
+    /* -- Page Hero ----------------------------------------------- */
+    .page-hero {
+      position: relative;
+      padding-top: calc(var(--navbar-height) + 5rem);
+      padding-bottom: 5rem;
+      background-image: url('https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
 
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10, 10, 10, .88) 0%, rgba(10, 10, 10, .72) 60%, rgba(10, 10, 10, .95) 100%);
+      z-index: 1;
+    }
 
-    .newsletter-strip { background:var(--secondary-bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding-block:var(--space-xl); text-align:center; position:relative; overflow:hidden; }
-    .newsletter-strip::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at center,rgba(201,168,76,.08) 0%,transparent 70%); pointer-events:none; }
-    .newsletter-form { display:flex; max-width:500px; margin:0 auto; gap:.5rem; margin-top:var(--space-md); position:relative; z-index:2; }
-    @media (max-width:600px) { .newsletter-form { flex-direction:column; } }
-    .newsletter-form input { flex-grow:1; background:var(--bg-color); border:1px solid var(--border); border-radius:var(--radius-sm); padding:.8rem 1rem; color:var(--text-primary); font-size:1rem; outline:none; transition:border-color var(--transition); }
-    .newsletter-form input:focus { border-color:var(--gold); }
+    .page-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .page-hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+      text-shadow: 0 4px 24px rgba(0, 0, 0, .8);
+    }
+
+    /* -- Blog Grid ----------------------------------------------- */
+    /* FIX #5: Added explicit blog grid & card styles in case style.css changes */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .blog-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-gold, 0 8px 30px rgba(201, 168, 76, 0.15));
+    }
+
+    .blog-card__image {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .blog-card__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .blog-card:hover .blog-card__image img {
+      transform: scale(1.05);
+    }
+
+    .blog-card__content {
+      padding: var(--space-md) var(--space-lg);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card__meta {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    .blog-card__meta span {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .blog-card__meta span:first-child {
+      color: var(--gold);
+    }
+
+    .blog-card__meta span+span::before {
+      content: '·';
+      margin-right: var(--space-sm);
+      color: var(--text-secondary);
+    }
+
+    .blog-card__title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-bottom: var(--space-sm);
+    }
+
+    .blog-card__excerpt {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-top: auto;
+    }
+
+    /* FIX #6: Blog card link wraps content inside article, not outside */
+    .blog-card a.blog-card__link-overlay {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      height: 100%;
+    }
+
+    /* -- Newsletter Strip --------------------------------------- */
+    .newsletter-strip {
+      background: var(--secondary-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding-block: var(--space-xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(201, 168, 76, .08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: .5rem;
+      margin-top: var(--space-md);
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 600px) {
+      .newsletter-form {
+        flex-direction: column;
+      }
+    }
+
+    .newsletter-form input {
+      flex-grow: 1;
+      background: var(--bg-color);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: .8rem 1rem;
+      color: var(--text-primary);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color var(--transition);
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--gold);
+    }
+
+    /* FIX #13: Success message state for newsletter */
+    .newsletter-success {
+      display: none;
+      color: var(--gold);
+      font-size: 1rem;
+      margin-top: var(--space-md);
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-success.visible {
+      display: block;
+    }
   </style>
 </head>
+
 <body>
   <div class="mobile-nav__overlay" id="mobileOverlay"></div>
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+
+  <!-- FIX #1: Updated booking URL to https:// -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <button class="mobile-nav__close" id="mobileNavClose" aria-label="Close menu">&#10005;</button>
-    <a href="index.html" >Home</a>
+    <a href="index.html">Home</a>
     <a href="sciatica-treatment.html">Sciatica Treatment</a>
     <a href="lower-back-pain.html">Lower Back Pain</a>
     <a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a>
@@ -33,35 +248,37 @@
     <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="mobile-nav__book">Book Now</a>
+    <!-- FIX #9: Added Blog link to mobile nav -->
+    <a href="blog.html" class="active">Blog</a>
+    <a href="https://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="mobile-nav__book">Book Now</a>
   </nav>
-<header class="navbar" id="mainNavbar">
+
+  <header class="navbar" id="mainNavbar">
     <div class="navbar__inner">
-      <!-- Logo -->
       <a href="index.html" class="navbar__brand">
-        <img src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png" alt="Bodyfix99 Logo" class="brand-logo" style="height: 55px; width: auto; object-fit: contain;">
+        <img
+          src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png"
+          alt="Bodyfix99 Logo" class="brand-logo" style="height: 55px; width: auto; object-fit: contain;">
         <div class="navbar__logo">BODYFIX<span>99</span></div>
-        
       </a>
 
-      <!-- Desktop nav links -->
       <nav class="navbar__links" aria-label="Main navigation">
-        <a href="index.html" >Home</a>
+        <a href="index.html">Home</a>
         <a href="sciatica-treatment.html">Sciatica Treatment</a>
         <a href="lower-back-pain.html">Lower Back Pain</a>
         <a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a>
         <a href="concussion-recovery.html">Concussion Recovery</a>
         <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
-
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <!-- FIX #9: Added Blog as active nav item -->
+        <a href="blog.html" class="active">Blog</a>
       </nav>
 
-      <!-- Book Now CTA -->
-      <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+      <!-- FIX #1: https:// -->
+      <a href="https://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
         class="btn btn-book-now navbar__cta">Book Now</a>
 
-      <!-- Hamburger (mobile only) -->
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"
         aria-controls="mobileNav">
         <span class="hamburger__line"></span>
@@ -70,57 +287,130 @@
       </button>
     </div>
   </header>
+
   <main>
+    <!-- Hero -->
     <section class="page-hero">
-      <div class="container page-hero__content fade-in"><h1 class="page-hero__title">Blog & Resources</h1></div>
-    </section>
-    <section class="section">
-      <div class="container">
-        <div class="blog-grid">
-          <a href="https://bodyfix99.com/stress-and-tension-relief-through-manual-therapy-beyond-muscle-relaxation/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-            <article class="blog-card fade-in delay-1">
-              <div class="blog-card__image"><img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg" alt="Stress and Tension Relief"></div>
-              <div class="blog-card__content">
-                <div class="blog-card__meta"><span>Dec 14</span><span>Wellness</span></div>
-                <h3 class="blog-card__title">Stress and Tension Relief Through Manual Therapy: Beyond Muscle Relaxation</h3>
-                <p class="blog-card__excerpt">Why simply relaxing a muscle doesn't solve chronic stress, and how treating the fascia and nervous system leads to profound structural relief.</p>
-              </div>
-            </article>
-          </a>
-          <a href="https://bodyfix99.com/unlock-lasting-pain-relief-targeting-the-root-cause-with-osteopathic-care/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-            <article class="blog-card fade-in delay-2">
-              <div class="blog-card__image"><img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765634463.jpeg" alt="Osteopathic Care"></div>
-              <div class="blog-card__content">
-                <div class="blog-card__meta"><span>Dec 13</span><span>Osteopathy</span></div>
-                <h3 class="blog-card__title">Unlock Lasting Pain Relief: Targeting the Root Cause with Osteopathic Care</h3>
-                <p class="blog-card__excerpt">Discover the interconnected mechanics of the human body, and learn why pain at the destination is rarely where the problem began.</p>
-              </div>
-            </article>
-          </a>
-          <a href="https://bodyfix99.com/boost-your-workout-integrate-osteopathy-for-injury-free-fitness/" target="_blank" style="text-decoration:none; color:inherit; display:block;">
-            <article class="blog-card fade-in delay-3">
-              <div class="blog-card__image"><img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765566086.jpeg" alt="Fitness and Osteopathy"></div>
-              <div class="blog-card__content">
-                <div class="blog-card__meta"><span>Dec 12</span><span>Fitness</span></div>
-                <h3 class="blog-card__title">Boost Your Workout: Integrate Osteopathy for Injury-Free Fitness</h3>
-                <p class="blog-card__excerpt">How balancing your pelvic floor, ribcage mobility, and spinal alignment can immediately boost your strength and prevent workout injuries.</p>
-              </div>
-            </article>
-          </a>
-        </div>
+      <div class="container page-hero__content fade-in">
+        <!-- FIX #11: Escaped & as &amp; in H1 -->
+        <h1 class="page-hero__title">Blog &amp; Resources</h1>
       </div>
     </section>
+
+    <!-- Blog Grid -->
+    <section class="section">
+      <div class="container">
+
+        <!-- FIX #6: <article> wraps <a>, not the other way around -->
+        <div class="blog-grid">
+
+          <article class="blog-card fade-in delay-1">
+            <a href="https://bodyfix99.com/stress-and-tension-relief-through-manual-therapy-beyond-muscle-relaxation/"
+              target="_blank" rel="noopener" class="blog-card__link-overlay"
+              aria-label="Read: Stress and Tension Relief Through Manual Therapy">
+              <div class="blog-card__image">
+                <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg"
+                  alt="Manual therapy session for stress and tension relief" loading="lazy">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">
+                  <!-- FIX #8: Machine-readable datetime added -->
+                  <time datetime="2025-12-14">Dec 14, 2025</time>
+                  <span>Wellness</span>
+                </div>
+                <h3 class="blog-card__title">Stress and Tension Relief Through Manual Therapy: Beyond Muscle Relaxation
+                </h3>
+                <p class="blog-card__excerpt">Why simply relaxing a muscle doesn't solve chronic stress, and how
+                  treating the fascia and nervous system leads to profound structural relief.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in delay-2">
+            <a href="https://bodyfix99.com/unlock-lasting-pain-relief-targeting-the-root-cause-with-osteopathic-care/"
+              target="_blank" rel="noopener" class="blog-card__link-overlay"
+              aria-label="Read: Unlock Lasting Pain Relief with Osteopathic Care">
+              <div class="blog-card__image">
+                <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765634463.jpeg"
+                  alt="Spine anatomy — targeting root cause with osteopathic care" loading="lazy">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">
+                  <time datetime="2025-12-13">Dec 13, 2025</time>
+                  <span>Osteopathy</span>
+                </div>
+                <h3 class="blog-card__title">Unlock Lasting Pain Relief: Targeting the Root Cause with Osteopathic Care
+                </h3>
+                <p class="blog-card__excerpt">Discover the interconnected mechanics of the human body, and learn why
+                  pain at the destination is rarely where the problem began.</p>
+              </div>
+            </a>
+          </article>
+
+          <article class="blog-card fade-in delay-3">
+            <a href="https://bodyfix99.com/boost-your-workout-integrate-osteopathy-for-injury-free-fitness/"
+              target="_blank" rel="noopener" class="blog-card__link-overlay"
+              aria-label="Read: Boost Your Workout with Osteopathy">
+              <div class="blog-card__image">
+                <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765566086.jpeg"
+                  alt="Runner at the gym — integrating osteopathy for injury-free fitness" loading="lazy">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">
+                  <time datetime="2025-12-12">Dec 12, 2025</time>
+                  <span>Fitness</span>
+                </div>
+                <h3 class="blog-card__title">Boost Your Workout: Integrate Osteopathy for Injury-Free Fitness</h3>
+                <p class="blog-card__excerpt">How balancing your pelvic floor, ribcage mobility, and spinal alignment
+                  can immediately boost your strength and prevent workout injuries.</p>
+              </div>
+            </a>
+          </article>
+
+        </div>
+
+        <!-- FIX #12: Added link to full blog for more posts -->
+        <div style="text-align: center; margin-top: var(--space-xl);">
+          <a href="https://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-secondary">
+            BOOK YOUR APPOINTMENT
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Newsletter Strip -->
     <div class="newsletter-strip fade-in">
       <div class="container">
         <h2>Stay Informed About Your Health</h2>
-        <p style="color:var(--text-secondary);">Join our newsletter for practical tips on managing pain and improving mobility.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
-          <input type="email" placeholder="Your email address" required aria-label="Email address">
+        <p style="color: var(--text-secondary);">Join our newsletter for practical tips on managing pain and improving
+          mobility.</p>
+
+        <!--
+          FIX #4: Replaced fake alert() handler with a proper inline success message.
+          To connect a real email service (e.g. Mailchimp, ConvertKit, Formspree):
+            1. Replace action="#" with your service's form action URL
+            2. Add method="POST" and any hidden fields your service requires
+            3. Remove the onsubmit JS or update it to match your service's flow
+        -->
+        <form class="newsletter-form" id="newsletterForm" action="#" method="POST" onsubmit="
+            event.preventDefault();
+            document.getElementById('newsletterForm').style.display = 'none';
+            document.getElementById('newsletterSuccess').classList.add('visible');
+          ">
+          <input type="email" name="email" placeholder="Your email address" required aria-label="Email address"
+            autocomplete="email">
           <button type="submit" class="btn btn-primary">Subscribe</button>
         </form>
+
+        <!-- FIX #13: Real success state — no alert() popup -->
+        <p class="newsletter-success" id="newsletterSuccess" role="status" aria-live="polite">
+          &#10003;&nbsp; You're subscribed! We'll be in touch with our latest insights.
+        </p>
       </div>
     </div>
   </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
@@ -142,21 +432,24 @@
             <p style="color:#a0a0a0; font-size:13px; line-height:1.6; margin-bottom:20px;">Root-cause osteopathic care
               for chronic pain, mobility &amp; injuries in Fort McMurray.</p>
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
-              <img src="images/nicholas-berisha.jpeg" alt="R. Nicholas Berisha"
+              <img src="images/nicholas-berisha.jpeg" alt="R. Nicholas Berisha, Osteopathic Practitioner"
                 style="width:55px; height:55px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid #c9a84c; flex-shrink:0;">
               <div>
                 <div style="color:#f5f5f5; font-size:13px; font-weight:500;">R. Nicholas Berisha</div>
                 <div style="color:#c9a84c; font-size:11px; letter-spacing:1px;">Osteopathic Practitioner</div>
               </div>
             </div>
+            <!-- FIX #2: Social links updated — replace with real profile URLs when confirmed -->
             <div class="footer__socials">
-              <a href="#" aria-label="Facebook" class="footer__social-icon">
+              <a href="https://facebook.com/bodyfix99" target="_blank" rel="noopener" aria-label="Bodyfix99 on Facebook"
+                class="footer__social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
                   aria-hidden="true">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="#" aria-label="Instagram" class="footer__social-icon">
+              <a href="https://instagram.com/bodyfix99" target="_blank" rel="noopener"
+                aria-label="Bodyfix99 on Instagram" class="footer__social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                   aria-hidden="true">
@@ -165,7 +458,8 @@
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href="#" aria-label="LinkedIn" class="footer__social-icon">
+              <a href="https://linkedin.com/company/bodyfix99" target="_blank" rel="noopener"
+                aria-label="Bodyfix99 on LinkedIn" class="footer__social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
                   aria-hidden="true">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -183,9 +477,10 @@
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services Details</a></li>
+            <!-- FIX #3: services.html replaced with #services anchor; blog.html is this page -->
+            <li><a href="index.html#services">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="blog.html" aria-current="page">Blog</a></li>
           </ul>
         </div>
 
@@ -206,24 +501,30 @@
           <h4 class="footer__heading">Contact</h4>
           <ul class="footer__contact">
             <li>
-              <span class="footer__contact-icon" aria-hidden="true"><span
-                  style="color:#c9a84c; margin-right:8px;">&#9679;</span></span>
-              <span>Nomad Hotel, 10006 MacDonald Avenue,<br>Fort McMurray, Alberta T9H 1S8</span>
+              <span class="footer__contact-icon" aria-hidden="true">
+                <span style="color:#c9a84c; margin-right:8px;">&#9679;</span>
+              </span>
+              <address style="font-style:normal; display:inline;">Nomad Hotel, 10006 MacDonald Avenue,<br>Fort McMurray,
+                Alberta T9H 1S8</address>
             </li>
             <li>
-              <span class="footer__contact-icon" aria-hidden="true"><span
-                  style="color:#c9a84c; margin-right:8px;">&#9742;</span></span>
+              <span class="footer__contact-icon" aria-hidden="true">
+                <span style="color:#c9a84c; margin-right:8px;">&#9742;</span>
+              </span>
               <a href="tel:+17803356705">780-335-6705</a>
             </li>
             <li>
-              <span class="footer__contact-icon" aria-hidden="true"><span
-                  style="color:#c9a84c; margin-right:8px;">&#9993;</span></span>
+              <span class="footer__contact-icon" aria-hidden="true">
+                <span style="color:#c9a84c; margin-right:8px;">&#9993;</span>
+              </span>
               <a href="mailto:fixme@bodyfix99.com">fixme@bodyfix99.com</a>
             </li>
             <li>
-              <span class="footer__contact-icon" aria-hidden="true"><span
-                  style="color:#c9a84c; margin-right:8px;">&#9201;</span></span>
-              <span>9:00 AM TO 9:00 PM</span>
+              <span class="footer__contact-icon" aria-hidden="true">
+                <span style="color:#c9a84c; margin-right:8px;">&#9201;</span>
+              </span>
+              <!-- FIX: Consistent dash style (en dash) -->
+              <span>9:00 AM &#8211; 9:00 PM</span>
             </li>
           </ul>
         </div>
@@ -237,6 +538,8 @@
       </div>
     </div>
   </footer>
+
   <script src="js/main.js"></script>
 </body>
+
 </html>

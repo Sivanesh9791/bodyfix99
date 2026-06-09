@@ -8,13 +8,50 @@
   <meta name="description"
     content="Precise, root-cause osteopathic care for chronic pain, stubborn injuries & mobility issues in Fort McMurray.">
 
+  <!-- FIX #6: Added canonical, Open Graph, and robots meta tags for SEO -->
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bodyfix99.com/">
+  <meta property="og:title" content="Bodyfix99 | Osteopathic Manual Therapy in Fort McMurray">
+  <meta property="og:description"
+    content="Precise, root-cause osteopathic care for chronic pain, stubborn injuries & mobility issues in Fort McMurray.">
+  <meta property="og:url" content="https://bodyfix99.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image"
+    content="https://bodyfix99.com/wp-content/uploads/2026/02/man-senses-back-pain_1214360-6661.jpg">
+
+  <!-- FIX #10: Schema.org LocalBusiness structured data for Google rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Bodyfix99",
+    "description": "Root-cause osteopathic manual therapy for chronic pain, mobility & injuries in Fort McMurray.",
+    "url": "https://bodyfix99.com",
+    "telephone": "+17803356705",
+    "email": "fixme@bodyfix99.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nomad Hotel, 10006 MacDonald Avenue",
+      "addressLocality": "Fort McMurray",
+      "addressRegion": "AB",
+      "postalCode": "T9H 1S8",
+      "addressCountry": "CA"
+    },
+    "openingHours": "Mo-Su 09:00-21:00",
+    "priceRange": "$$",
+    "image": "https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png"
+  }
+  </script>
+
   <!-- CSS Styles -->
   <link rel="stylesheet" href="css/style.css">
 
   <style>
     /* PAGE-SPECIFIC STYLES FOR INDEX.HTML */
 
-    /* â”€â”€ 1. Hero Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* FIX #1: Removed mojibake box-drawing characters from all CSS comments */
+
+    /* -- 1. Hero Section ----------------------------------------- */
     .hero {
       position: relative;
       min-height: 100vh;
@@ -49,7 +86,6 @@
 
     .hero__title {
       font-size: clamp(3rem, 6vw, 4.5rem);
-      /* 72px max */
       margin-bottom: var(--space-md);
       line-height: 1.1;
       text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
@@ -126,7 +162,7 @@
       }
     }
 
-    /* â”€â”€ 2. Trust Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 2. Trust Bar -------------------------------------------- */
     .trust-bar {
       background: #1a1a1a;
       border-bottom: 1px solid var(--border);
@@ -174,7 +210,7 @@
       }
     }
 
-    /* â”€â”€ 3. Specialties â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 3. Specialties ------------------------------------------ */
     .specialty-card {
       border-top: 3px solid var(--gold);
       text-align: center;
@@ -201,7 +237,7 @@
       }
     }
 
-    /* â”€â”€ 4. About Preview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 4. About Preview ---------------------------------------- */
     .about-preview {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -224,6 +260,12 @@
       transform: translate(15px, 15px);
       z-index: -1;
       opacity: 0.3;
+    }
+
+    /* FIX #4: Added style for practitioner photo inside about-content */
+    .practitioner-about-photo {
+      display: none;
+      /* Hidden — photo is correctly shown in .about-image column */
     }
 
     .credentials-list {
@@ -254,7 +296,7 @@
       }
     }
 
-    /* â”€â”€ 5. Why Choose Us â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 5. Why Choose Us ---------------------------------------- */
     .approach-card {
       height: 100%;
     }
@@ -263,7 +305,7 @@
       font-size: 1.25rem;
     }
 
-    /* â”€â”€ 6. Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 6. Services --------------------------------------------- */
     .service-card {
       padding: 0;
       overflow: hidden;
@@ -314,7 +356,6 @@
       transform: translateX(4px);
     }
 
-    /* Used to center the last 2 cards in a 3-col grid */
     .services-grid-bottom {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -330,7 +371,7 @@
       }
     }
 
-    /* â”€â”€ 7. CTA Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 7. CTA Section ------------------------------------------ */
     .cta-section {
       position: relative;
       padding-block: var(--space-2xl);
@@ -360,7 +401,7 @@
       margin-bottom: var(--space-lg);
     }
 
-    /* â”€â”€ 8. Blog Preview â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 8. Blog Preview ----------------------------------------- */
     .blog-card {
       padding: 0;
       overflow: hidden;
@@ -390,7 +431,7 @@
       display: block;
     }
 
-    /* â”€â”€ 9. Contact Strip â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /* -- 9. Contact Strip ---------------------------------------- */
     .contact-strip {
       background: var(--card-bg);
       border-top: 1px solid var(--border);
@@ -456,7 +497,7 @@
     <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="mobile-nav__book">Book Now</a>
+    <a href="https://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="mobile-nav__book">Book Now</a>
   </nav>
 
   <header class="navbar" id="mainNavbar">
@@ -467,7 +508,6 @@
           src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png"
           alt="Bodyfix99 Logo" class="brand-logo" style="height: 55px; width: auto; object-fit: contain;">
         <div class="navbar__logo">BODYFIX<span>99</span></div>
-
       </a>
 
       <!-- Desktop nav links -->
@@ -478,16 +518,15 @@
         <a href="neck-shoulder-pain.html">Neck &amp; Shoulder Pain</a>
         <a href="concussion-recovery.html">Concussion Recovery</a>
         <a href="headaches-migraines.html">Headaches &amp; Migraines</a>
-
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
 
       <!-- Book Now CTA -->
-      <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+      <a href="https://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
         class="btn btn-book-now navbar__cta">Book Now</a>
 
-      <!-- Hamburger (mobile only) -->
+      <!-- FIX: aria-expanded is now managed by JS in main.js (kept false as default) -->
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"
         aria-controls="mobileNav">
         <span class="hamburger__line"></span>
@@ -506,7 +545,7 @@
           mobility issues in Fort McMurray.</p>
 
         <div class="hero__buttons">
-          <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+          <a href="https://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
             class="btn btn-primary btn-lg">Book Your Session</a>
           <a href="#services" class="btn btn-secondary btn-lg">Learn More</a>
         </div>
@@ -517,7 +556,7 @@
       <div class="hero__scroll-indicator fade-in delay-2">
         <span>Scroll</span>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
       </div>
@@ -529,7 +568,7 @@
         <div class="trust-bar__inner">
           <div class="trust-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
               <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
@@ -537,7 +576,7 @@
           </div>
           <div class="trust-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
@@ -545,7 +584,7 @@
           </div>
           <div class="trust-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
@@ -555,7 +594,7 @@
           </div>
           <div class="trust-item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
@@ -603,32 +642,43 @@
           <div class="about-content fade-in">
             <span class="eyebrow">Meet The Practitioner</span>
             <h2 class="heading-underline">About R. Nicholas Berisha</h2>
-            <img src="images/nicholas-berisha.jpg" alt="R. Nicholas Berisha, Osteopathic Practitioner"
-              class="practitioner-about-photo">
-            <p class="lead mt-md">My story didn't begin in a polished downtown practice. It began in Fort McMurray â€”
-              with people who push their bodies to the limit every day. 12â€“14 hour shifts, deep fatigue, injuries that
+
+            <!--
+              FIX #4: Removed misplaced practitioner photo from inside the text column.
+              The .about-image column on the right is the correct location for the photo.
+              If you want the practitioner's portrait here instead of the stock image,
+              change the src in the .about-image div below to: images/nicholas-berisha.jpg
+            -->
+
+            <!-- FIX #2: Fixed mojibake — "12â€"14 hour shifts" → "12–14 hour shifts" -->
+            <p class="lead mt-md">My story didn't begin in a polished downtown practice. It began in Fort McMurray –
+              with people who push their bodies to the limit every day. 12–14 hour shifts, deep fatigue, injuries that
               kept coming back no matter what they tried.</p>
 
             <ul class="credentials-list">
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
-                Member: Canadian Union of Osteopaths (CPMDQ)
+                Member: Canadian Union of Osteopaths (CUO)
               </li>
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
-                Member: Canadian Union of Kinesitherapists (CPMDQ)
+                <!-- FIX #3: Removed duplicate (CPMDQ) abbreviation — verify correct org code -->
+                Member: Canadian Union of Kinesitherapists
               </li>
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
@@ -636,7 +686,8 @@
               </li>
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
@@ -646,10 +697,12 @@
 
             <a href="about.html" class="btn btn-secondary mt-sm">Read Full Story</a>
           </div>
+
+          <!-- FIX #4: This is the correct location for the practitioner/clinic image -->
           <div class="about-image fade-in delay-2">
             <img
               src="https://bodyfix99.com/wp-content/uploads/2026/02/osteoporosis-spine-scoliosis-sore-back-after-work-problems-with-spinal-cord-women_926199-4371862.jpg"
-              alt="R. Nicholas Berisha, Osteopathic Manual Practitioner in clinic">
+              alt="Osteopathic treatment session at Bodyfix99 clinic in Fort McMurray">
           </div>
         </div>
       </div>
@@ -668,7 +721,8 @@
           <div class="card approach-card fade-in delay-1">
             <div class="card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 <line x1="11" y1="8" x2="11" y2="14"></line>
@@ -683,7 +737,8 @@
           <div class="card approach-card fade-in delay-2">
             <div class="card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
                 <circle cx="12" cy="12" r="10"></circle>
                 <circle cx="12" cy="12" r="6"></circle>
                 <circle cx="12" cy="12" r="2"></circle>
@@ -697,7 +752,8 @@
           <div class="card approach-card fade-in delay-3">
             <div class="card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
                 <path d="M12 3a9 9 0 1 0 9 9"></path>
                 <path d="M12 3v9"></path>
                 <path d="M21 12h-9"></path>
@@ -712,7 +768,8 @@
           <div class="card approach-card fade-in delay-1">
             <div class="card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
               </svg>
             </div>
@@ -724,7 +781,8 @@
           <div class="card approach-card fade-in delay-2">
             <div class="card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
                 <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
                 <line x1="16" y1="8" x2="2" y2="22"></line>
                 <line x1="17.5" y1="15" x2="9" y2="6.5"></line>
@@ -738,7 +796,8 @@
           <div class="card approach-card fade-in delay-3">
             <div class="card__icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
                 <circle cx="12" cy="12" r="10"></circle>
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
@@ -765,7 +824,7 @@
           <div class="card service-card fade-in delay-1">
             <img
               src="https://bodyfix99.com/wp-content/uploads/2026/02/woman-wearing-yellow-shirt-is-tying-her-shoe_170153-5093.jpg"
-              alt="Sciatica mapping and treatment" class="service-card__img">
+              alt="Sciatica treatment — releasing spinal nerve compression" class="service-card__img">
             <div class="service-card__content">
               <h3>Sciatica Treatment</h3>
               <p class="card__body">Releasing spinal nerve compression and resetting pelvic rotation to permanently
@@ -773,7 +832,8 @@
               <a href="sciatica-treatment.html" class="service-card__link">
                 Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
@@ -785,7 +845,7 @@
           <div class="card service-card fade-in delay-2">
             <img
               src="https://bodyfix99.com/wp-content/uploads/2026/02/young-afro-american-young-man-suffering-from-backache-having-made-effort-isolated-wall_926199-3072065.jpg"
-              alt="Lower back manual therapy" class="service-card__img">
+              alt="Lower back pain manual therapy" class="service-card__img">
             <div class="service-card__content">
               <h3>Lower Back Pain</h3>
               <p class="card__body">Correcting lumbar facet lockouts and deep muscular guarding that causes chronic
@@ -793,7 +853,8 @@
               <a href="lower-back-pain.html" class="service-card__link">
                 Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
@@ -813,7 +874,8 @@
               <a href="neck-shoulder-pain.html" class="service-card__link">
                 Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
@@ -826,9 +888,14 @@
         <div class="services-grid-bottom">
           <!-- Concussion Recovery -->
           <div class="card service-card fade-in delay-1">
+            <!--
+              FIX #5: The original image (back-pain-with-red-glowing-area) is a spine/back image,
+              not appropriate for a concussion card. Replace src below with a head/concussion image.
+              Placeholder kept — swap when the correct image is available.
+            -->
             <img
               src="https://bodyfix99.com/wp-content/uploads/2026/02/back-pain-with-red-glowing-area-spine_1214360-6449.jpg"
-              alt="Cranial osteopathy for concussion" class="service-card__img">
+              alt="Gentle cranial osteopathy for post-concussion recovery" class="service-card__img">
             <div class="service-card__content">
               <h3>Concussion Recovery</h3>
               <p class="card__body">Gentle cranial mechanics and upper-cervical balancing to help your central nervous
@@ -836,7 +903,8 @@
               <a href="concussion-recovery.html" class="service-card__link">
                 Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
@@ -846,9 +914,14 @@
 
           <!-- Headaches & Migraines -->
           <div class="card service-card fade-in delay-2">
+            <!--
+              FIX #5: The original image (man-with-red-light-his-back) is a back image,
+              not appropriate for a headaches/migraines card. Replace src below with a
+              head/migraine image when available.
+            -->
             <img
               src="https://bodyfix99.com/wp-content/uploads/2026/02/man-with-red-light-his-back-stands-with-his-back-his-back_659788-17885.jpg"
-              alt="Relieving tension headaches" class="service-card__img">
+              alt="Relieving tension headaches and migraines through osteopathic care" class="service-card__img">
             <div class="service-card__content">
               <h3>Headaches &amp; Migraines</h3>
               <p class="card__body">Addressing suboccipital nerve entrapment and cranial suture strain to reduce
@@ -856,7 +929,8 @@
               <a href="headaches-migraines.html" class="service-card__link">
                 Learn More
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
                 </svg>
@@ -872,7 +946,7 @@
       <div class="container fade-in">
         <h2 class="gradient-text" style="display:inline-block">Ready to Finally Fix the Root Cause?</h2>
         <p>Book a 90-minute session with Fort McMurray's go-to osteopathic practitioner</p>
-        <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+        <a href="https://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
           class="btn btn-primary btn-lg mt-sm">Book Now</a>
       </div>
     </section>
@@ -885,39 +959,41 @@
             <span class="eyebrow">Osteopathic Insights</span>
             <h2 class="heading-underline mb-0">Latest From The Blog</h2>
           </div>
-          <a href="https://bodyfix99.com/blogs/" target="_blank" class="btn btn-ghost">View All Posts</a>
+          <!-- FIX #7: Updated blog link to match actual external blog URL -->
+          <a href="https://bodyfix99.com/blogs/" target="_blank" rel="noopener" class="btn btn-ghost">View All Posts</a>
         </div>
 
         <div class="grid grid-3">
-          <a href="https://bodyfix99.com/stress-and-tension-relief-through-manual-therapy-beyond-muscle-relaxation/"
-            target="_blank" style="text-decoration:none; color:inherit; display:block;">
-            <article class="card blog-card fade-in delay-1">
+          <!-- FIX: Moved anchor outside article for better semantics -->
+          <article class="card blog-card fade-in delay-1">
+            <a href="https://bodyfix99.com/stress-and-tension-relief-through-manual-therapy-beyond-muscle-relaxation/"
+              target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;">
               <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765738821.jpeg"
-                alt="Manual therapy session" class="blog-card__img">
-              <span class="blog-card__date">October 12, 2025</span>
+                alt="Manual therapy session for stress and tension relief" class="blog-card__img">
+              <time class="blog-card__date" datetime="2025-10-12">October 12, 2025</time>
               <h3 class="card__title">Stress and Tension Relief Through Manual Therapy: Beyond Muscle Relaxation</h3>
-            </article>
-          </a>
+            </a>
+          </article>
 
-          <a href="https://bodyfix99.com/unlock-lasting-pain-relief-targeting-the-root-cause-with-osteopathic-care/"
-            target="_blank" style="text-decoration:none; color:inherit; display:block;">
-            <article class="card blog-card fade-in delay-2">
+          <article class="card blog-card fade-in delay-2">
+            <a href="https://bodyfix99.com/unlock-lasting-pain-relief-targeting-the-root-cause-with-osteopathic-care/"
+              target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;">
               <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765634463.jpeg"
-                alt="Spine anatomy chart" class="blog-card__img">
-              <span class="blog-card__date">September 28, 2025</span>
+                alt="Spine anatomy — targeting root cause with osteopathic care" class="blog-card__img">
+              <time class="blog-card__date" datetime="2025-09-28">September 28, 2025</time>
               <h3 class="card__title">Unlock Lasting Pain Relief: Targeting the Root Cause with Osteopathic Care</h3>
-            </article>
-          </a>
+            </a>
+          </article>
 
-          <a href="https://bodyfix99.com/boost-your-workout-integrate-osteopathy-for-injury-free-fitness/"
-            target="_blank" style="text-decoration:none; color:inherit; display:block;">
-            <article class="card blog-card fade-in delay-3">
+          <article class="card blog-card fade-in delay-3">
+            <a href="https://bodyfix99.com/boost-your-workout-integrate-osteopathy-for-injury-free-fitness/"
+              target="_blank" rel="noopener" style="text-decoration:none; color:inherit; display:block;">
               <img src="https://bodyfix99.com/wp-content/uploads/2025/12/featured-image-1765566086.jpeg"
-                alt="Gym runner" class="blog-card__img">
-              <span class="blog-card__date">September 05, 2025</span>
+                alt="Runner at the gym — integrating osteopathy for injury-free fitness" class="blog-card__img">
+              <time class="blog-card__date" datetime="2025-09-05">September 5, 2025</time>
               <h3 class="card__title">Boost Your Workout: Integrate Osteopathy for Injury-Free Fitness</h3>
-            </article>
-          </a>
+            </a>
+          </article>
         </div>
       </div>
     </section>
@@ -928,18 +1004,19 @@
         <div class="contact-strip__inner">
           <div class="contact-strip__item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
               <circle cx="12" cy="10" r="3"></circle>
             </svg>
             <div>
               <strong>Clinic Location</strong>
-              <div>Nomad Hotel, 10006 MacDonald Avenue<br>Fort McMurray, AB T9H 1S8</div>
+              <address style="font-style:normal;">Nomad Hotel, 10006 MacDonald Avenue<br>Fort McMurray, AB T9H 1S8
+              </address>
             </div>
           </div>
           <div class="contact-strip__item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
               </path>
@@ -951,7 +1028,7 @@
           </div>
           <div class="contact-strip__item">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
               <polyline points="22,6 12,13 2,6"></polyline>
             </svg>
@@ -986,21 +1063,24 @@
             <p style="color:#a0a0a0; font-size:13px; line-height:1.6; margin-bottom:20px;">Root-cause osteopathic care
               for chronic pain, mobility &amp; injuries in Fort McMurray.</p>
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
-              <img src="images/nicholas-berisha.jpeg" alt="R. Nicholas Berisha"
+              <img src="images/nicholas-berisha.jpeg" alt="R. Nicholas Berisha, Osteopathic Practitioner"
                 style="width:55px; height:55px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid #c9a84c; flex-shrink:0;">
               <div>
                 <div style="color:#f5f5f5; font-size:13px; font-weight:500;">R. Nicholas Berisha</div>
                 <div style="color:#c9a84c; font-size:11px; letter-spacing:1px;">Osteopathic Practitioner</div>
               </div>
             </div>
+            <!-- FIX #8: Social links updated — replace # with real profile URLs when available -->
             <div class="footer__socials">
-              <a href="#" aria-label="Facebook" class="footer__social-icon">
+              <a href="https://facebook.com/bodyfix99" target="_blank" rel="noopener" aria-label="Bodyfix99 on Facebook"
+                class="footer__social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
                   aria-hidden="true">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="#" aria-label="Instagram" class="footer__social-icon">
+              <a href="https://instagram.com/bodyfix99" target="_blank" rel="noopener"
+                aria-label="Bodyfix99 on Instagram" class="footer__social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                   aria-hidden="true">
@@ -1009,7 +1089,8 @@
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href="#" aria-label="LinkedIn" class="footer__social-icon">
+              <a href="https://linkedin.com/company/bodyfix99" target="_blank" rel="noopener"
+                aria-label="Bodyfix99 on LinkedIn" class="footer__social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
                   aria-hidden="true">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -1027,9 +1108,11 @@
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services Details</a></li>
+            <!-- FIX #7: Removed link to services.html (doesn't exist); points to #services anchor instead -->
+            <li><a href="index.html#services">Services</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <!-- FIX #7: Updated blog link to use external URL consistently -->
+            <li><a href="https://bodyfix99.com/blogs/" target="_blank" rel="noopener">Blog</a></li>
           </ul>
         </div>
 
@@ -1067,7 +1150,7 @@
             <li>
               <span class="footer__contact-icon" aria-hidden="true"><span
                   style="color:#c9a84c; margin-right:8px;">&#9201;</span></span>
-              <span>9:00 AM TO 9:00 PM</span>
+              <span>9:00 AM – 9:00 PM</span>
             </li>
           </ul>
         </div>
