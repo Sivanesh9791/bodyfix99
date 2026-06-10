@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services Details | Bodyfix99</title>
-  <meta name="description" content="Comprehensive osteopathic manual therapy services in Fort McMurray. We treat sciatica, lower back pain, neck pain, concussions, and headaches.">
+  <meta name="description"
+    content="Comprehensive osteopathic manual therapy services in Fort McMurray. We treat sciatica, lower back pain, neck pain, concussions, and headaches.">
 
   <!-- FIX #12: Added canonical, Open Graph, and robots meta tags -->
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://bodyfix99.com/services.html">
   <meta property="og:title" content="Services Details | Bodyfix99">
-  <meta property="og:description" content="Comprehensive osteopathic manual therapy services in Fort McMurray — sciatica, lower back pain, neck pain, concussions, and headaches.">
+  <meta property="og:description"
+    content="Comprehensive osteopathic manual therapy services in Fort McMurray — sciatica, lower back pain, neck pain, concussions, and headaches.">
   <meta property="og:url" content="https://bodyfix99.com/services.html">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://bodyfix99.com/wp-content/uploads/2026/02/back-pain-with-red-glowing-area-spine_1214360-6449.jpg">
+  <meta property="og:image" content="images/img6.jpg">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -23,24 +26,27 @@
       position: relative;
       padding-top: calc(var(--navbar-height) + 5rem);
       padding-bottom: 5rem;
-      background-image: url('https://bodyfix99.com/wp-content/uploads/2026/02/back-pain-with-red-glowing-area-spine_1214360-6449.jpg');
+      background-image: url('images/img6.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
       overflow: hidden;
     }
+
     .page-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(10,10,10,.88) 0%, rgba(10,10,10,.72) 60%, rgba(10,10,10,.95) 100%);
+      background: linear-gradient(to bottom, rgba(10, 10, 10, .88) 0%, rgba(10, 10, 10, .72) 60%, rgba(10, 10, 10, .95) 100%);
       z-index: 1;
     }
+
     .page-hero__content {
       position: relative;
       z-index: 2;
       text-align: center;
     }
+
     .page-hero__title {
       font-family: var(--font-heading);
       font-size: clamp(2.5rem, 5vw, 3.75rem);
@@ -48,7 +54,7 @@
       color: var(--text-primary);
       line-height: 1.1;
       margin-bottom: var(--space-md);
-      text-shadow: 0 4px 24px rgba(0,0,0,.8);
+      text-shadow: 0 4px 24px rgba(0, 0, 0, .8);
     }
 
     /* -- Service Cards ------------------------------------------ */
@@ -59,8 +65,11 @@
       gap: var(--space-lg);
       margin-bottom: var(--space-xl);
     }
+
     @media (max-width: 900px) {
-      .services-list { grid-template-columns: 1fr; }
+      .services-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     .svc-card {
@@ -73,44 +82,51 @@
       transition: all var(--transition);
       border-left: 4px solid var(--gold);
     }
+
     .svc-card:hover {
       box-shadow: var(--shadow-lg);
       transform: translateY(-5px);
     }
+
     .svc-card__header {
       display: flex;
       align-items: center;
       gap: var(--space-md);
       margin-bottom: var(--space-md);
     }
+
     .svc-card__icon {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 60px;
       height: 60px;
-      background: rgba(201,168,76,.1);
+      background: rgba(201, 168, 76, .1);
       border-radius: 50%;
       color: var(--gold);
       overflow: hidden;
       padding: 0;
       flex-shrink: 0;
     }
+
     .svc-card__icon img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 50%;
     }
+
     .svc-card h3 {
       font-size: 1.75rem;
       margin: 0;
     }
+
     .svc-card p {
       font-size: 1rem;
       color: var(--text-secondary);
       margin-bottom: var(--space-md);
     }
+
     .svc-card ul {
       list-style: none;
       margin: 0 0 var(--space-lg);
@@ -118,9 +134,13 @@
       grid-template-columns: 1fr 1fr;
       gap: .5rem 1rem;
     }
+
     @media (max-width: 600px) {
-      .svc-card ul { grid-template-columns: 1fr; }
+      .svc-card ul {
+        grid-template-columns: 1fr;
+      }
     }
+
     .svc-card ul li {
       display: flex;
       align-items: center;
@@ -128,12 +148,14 @@
       font-size: .9rem;
       color: var(--text-secondary);
     }
+
     /* FIX #10: Replaced corrupted âœ" with proper Unicode ✓ */
     .svc-card ul li::before {
       content: '\2713';
       color: var(--gold);
       font-weight: bold;
     }
+
     .svc-card .btn {
       align-self: flex-start;
     }
@@ -145,8 +167,18 @@
       gap: var(--space-md);
       margin-top: var(--space-lg);
     }
-    @media (max-width: 900px) { .steps-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .steps-grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 900px) {
+      .steps-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
     .step-card {
       background: var(--card-bg);
@@ -155,6 +187,7 @@
       border-radius: var(--radius-md);
       padding: var(--space-lg);
     }
+
     .step-card__num {
       font-family: var(--font-heading);
       font-size: 2.5rem;
@@ -164,11 +197,13 @@
       margin-bottom: .5rem;
       opacity: .6;
     }
+
     /* FIX #15: Added body text styles for step cards */
     .step-card h3 {
       font-size: 1.1rem;
       margin-bottom: .5rem;
     }
+
     .step-card p {
       font-size: .88rem;
       color: var(--text-secondary);
@@ -180,13 +215,14 @@
     .pricing-note {
       text-align: center;
       padding: var(--space-md);
-      background: rgba(201,168,76,.1);
+      background: rgba(201, 168, 76, .1);
       border: 1px solid var(--gold);
       border-radius: var(--radius-md);
       margin-bottom: var(--space-xl);
       display: inline-block;
       margin-inline: auto;
     }
+
     .pricing-note p {
       margin: 0;
       font-size: 1.1rem;
@@ -229,7 +265,8 @@
   <header class="navbar" id="mainNavbar">
     <div class="navbar__inner">
       <a href="index.html" class="navbar__brand">
-        <img src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png"
+        <img
+          src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png"
           alt="Bodyfix99 Logo" class="brand-logo" style="height: 55px; width: auto; object-fit: contain;">
         <div class="navbar__logo">BODYFIX<span>99</span></div>
       </a>
@@ -273,7 +310,9 @@
     <section class="section">
       <div class="container">
         <div class="text-center fade-in mb-xl">
-          <p class="lead" style="max-width:800px; margin-inline:auto;">Comprehensive, root-cause osteopathic care focused on permanently resolving pain and restoring function. We do not chase symptoms. We find the mechanical driver and fix it.</p>
+          <p class="lead" style="max-width:800px; margin-inline:auto;">Comprehensive, root-cause osteopathic care
+            focused on permanently resolving pain and restoring function. We do not chase symptoms. We find the
+            mechanical driver and fix it.</p>
         </div>
 
         <!-- FIX #11: Using .services-list with proper 2-column grid instead of bare .grid -->
@@ -283,12 +322,12 @@
           <div class="svc-card fade-in delay-1">
             <div class="svc-card__header">
               <div class="svc-card__icon">
-                <img src="https://bodyfix99.com/wp-content/uploads/2026/02/woman-wearing-yellow-shirt-is-tying-her-shoe_170153-5093.jpg"
-                  alt="Sciatica treatment">
+                <img src="images/img3.jpg" alt="Sciatica treatment">
               </div>
               <h3>Sciatica Treatment</h3>
             </div>
-            <p>Releasing spinal nerve compression and resetting pelvic rotation to permanently resolve shooting leg pain, numbness, and tingling running from your lower back down your leg.</p>
+            <p>Releasing spinal nerve compression and resetting pelvic rotation to permanently resolve shooting leg
+              pain, numbness, and tingling running from your lower back down your leg.</p>
             <ul>
               <li>Targeted Nerve Decompression</li>
               <li>Pelvic Alignment Correction</li>
@@ -302,12 +341,12 @@
           <div class="svc-card fade-in delay-2">
             <div class="svc-card__header">
               <div class="svc-card__icon">
-                <img src="https://bodyfix99.com/wp-content/uploads/2026/02/young-afro-american-young-man-suffering-from-backache-having-made-effort-isolated-wall_926199-3072065.jpg"
-                  alt="Lower back pain treatment">
+                <img src="images/img4.jpg" alt="Lower back pain treatment">
               </div>
               <h3>Lower Back Pain</h3>
             </div>
-            <p>Correcting lumbar facet lockouts, sacroiliac dysfunction, and deep muscular guarding that causes chronic centralized back ache and stiffness.</p>
+            <p>Correcting lumbar facet lockouts, sacroiliac dysfunction, and deep muscular guarding that causes chronic
+              centralized back ache and stiffness.</p>
             <ul>
               <li>Restore Lumbar Mobility</li>
               <li>Eliminate Deep Spasms</li>
@@ -321,12 +360,12 @@
           <div class="svc-card fade-in delay-1">
             <div class="svc-card__header">
               <div class="svc-card__icon">
-                <img src="https://bodyfix99.com/wp-content/uploads/2026/02/what-causes-neck-pain-young-adults-body-parts_972478-2523.jpg"
-                  alt="Neck and shoulder pain treatment">
+                <img src="images/img5.jpg" alt="Neck and shoulder pain treatment">
               </div>
               <h3>Neck &amp; Shoulder Pain</h3>
             </div>
-            <p>Decompressing cervical vertebrae and re-balancing the shoulder girdle to eliminate stiffness, localized pain, and nerve impingements running down the arm.</p>
+            <p>Decompressing cervical vertebrae and re-balancing the shoulder girdle to eliminate stiffness, localized
+              pain, and nerve impingements running down the arm.</p>
             <ul>
               <li>Restore Cervical Range of Motion</li>
               <li>Free Scapular Movement</li>
@@ -344,12 +383,12 @@
                   FIX #3: This image is a spine/back image — wrong for concussion.
                   Replace the src below with a head or concussion-related image when available.
                 -->
-                <img src="https://bodyfix99.com/wp-content/uploads/2026/02/back-pain-with-red-glowing-area-spine_1214360-6449.jpg"
-                  alt="Post-concussion osteopathic recovery">
+                <img src="images/img6.jpg" alt="Post-concussion osteopathic recovery">
               </div>
               <h3>Concussion Recovery</h3>
             </div>
-            <p>Gentle cranial mechanics, dural release, and upper-cervical balancing to help your central nervous system re-stabilize and accelerate recovery from post-concussion syndrome.</p>
+            <p>Gentle cranial mechanics, dural release, and upper-cervical balancing to help your central nervous system
+              re-stabilize and accelerate recovery from post-concussion syndrome.</p>
             <ul>
               <li>Clear Brain Fog</li>
               <li>Reduce Light Sensitivity</li>
@@ -367,12 +406,12 @@
                   FIX #4: This image is a back/spine image — wrong for headaches.
                   Replace the src below with a head/migraine image when available.
                 -->
-                <img src="https://bodyfix99.com/wp-content/uploads/2026/02/man-with-red-light-his-back-stands-with-his-back-his-back_659788-17885.jpg"
-                  alt="Headache and migraine osteopathic treatment">
+                <img src="images/img10.jpg" alt="Headache and migraine osteopathic treatment">
               </div>
               <h3>Headaches &amp; Migraines</h3>
             </div>
-            <p>Addressing suboccipital nerve entrapment, cervical restrictions, and cranial suture strain to drastically reduce headache frequency, intensity, and medication dependence.</p>
+            <p>Addressing suboccipital nerve entrapment, cervical restrictions, and cranial suture strain to drastically
+              reduce headache frequency, intensity, and medication dependence.</p>
             <ul>
               <li>Relieve Tension Headaches</li>
               <li>Stop Cervicogenic Headaches</li>
@@ -445,15 +484,18 @@
         <div class="footer__col">
           <div class="footer__brand">
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:15px;">
-              <img src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png"
+              <img
+                src="https://bodyfix99.com/wp-content/uploads/2025/07/WhatsApp_Image_2025-06-29_at_10.25.30_PM-removebg-preview-1.png"
                 alt="Bodyfix99 Logo" style="height:55px; width:auto; object-fit:contain;">
               <div>
                 <div style="font-family:'Cormorant Garamond',serif; color:#c9a84c; font-size:22px; letter-spacing:3px;">
                   BODYFIX<span style="color:#f5f5f5;">99</span></div>
-                <div style="font-size:10px; color:#a0a0a0; letter-spacing:2px; text-transform:uppercase;">Osteopathic Manual Therapy</div>
+                <div style="font-size:10px; color:#a0a0a0; letter-spacing:2px; text-transform:uppercase;">Osteopathic
+                  Manual Therapy</div>
               </div>
             </div>
-            <p style="color:#a0a0a0; font-size:13px; line-height:1.6; margin-bottom:20px;">Root-cause osteopathic care for chronic pain, mobility &amp; injuries in Fort McMurray.</p>
+            <p style="color:#a0a0a0; font-size:13px; line-height:1.6; margin-bottom:20px;">Root-cause osteopathic care
+              for chronic pain, mobility &amp; injuries in Fort McMurray.</p>
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
               <img src="images/nicholas-berisha.jpeg" alt="R. Nicholas Berisha, Osteopathic Practitioner"
                 style="width:55px; height:55px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid #c9a84c; flex-shrink:0;">
@@ -464,21 +506,27 @@
             </div>
             <!-- FIX #6: Social links updated — confirm real handles before deploying -->
             <div class="footer__socials">
-              <a href="https://facebook.com/bodyfix99" target="_blank" rel="noopener" aria-label="Bodyfix99 on Facebook" class="footer__social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <a href="https://facebook.com/bodyfix99" target="_blank" rel="noopener" aria-label="Bodyfix99 on Facebook"
+                class="footer__social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                  aria-hidden="true">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
               </a>
-              <a href="https://instagram.com/bodyfix99" target="_blank" rel="noopener" aria-label="Bodyfix99 on Instagram" class="footer__social-icon">
+              <a href="https://instagram.com/bodyfix99" target="_blank" rel="noopener"
+                aria-label="Bodyfix99 on Instagram" class="footer__social-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                   <circle cx="12" cy="12" r="4" />
                   <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                 </svg>
               </a>
-              <a href="https://linkedin.com/company/bodyfix99" target="_blank" rel="noopener" aria-label="Bodyfix99 on LinkedIn" class="footer__social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <a href="https://linkedin.com/company/bodyfix99" target="_blank" rel="noopener"
+                aria-label="Bodyfix99 on LinkedIn" class="footer__social-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"
+                  aria-hidden="true">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
@@ -497,7 +545,7 @@
             <!-- FIX #7: services.html is the current page — aria-current added; blog uses external URL -->
             <li><a href="services.html" aria-current="page">Services Details</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://bodyfix99.com/blogs/" target="_blank" rel="noopener">Blog</a></li>
+            <li><a href="blog.html" target="_blank" rel="noopener">Blog</a></li>
           </ul>
         </div>
 
@@ -521,7 +569,8 @@
               <span class="footer__contact-icon" aria-hidden="true">
                 <span style="color:#c9a84c; margin-right:8px;">&#9679;</span>
               </span>
-              <address style="font-style:normal; display:inline;">Nomad Hotel, 10006 MacDonald Avenue,<br>Fort McMurray, Alberta T9H 1S8</address>
+              <address style="font-style:normal; display:inline;">Nomad Hotel, 10006 MacDonald Avenue,<br>Fort McMurray,
+                Alberta T9H 1S8</address>
             </li>
             <li>
               <span class="footer__contact-icon" aria-hidden="true">
@@ -556,4 +605,5 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>

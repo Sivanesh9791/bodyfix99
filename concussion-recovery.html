@@ -1,48 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concussion Recovery & Management | Bodyfix99</title>
-  <meta name="description" content="Osteopathic support for post-concussion syndrome in Fort McMurray. Root-cause care for brain fog, dizziness, and headaches.">
+  <meta name="description"
+    content="Osteopathic support for post-concussion syndrome in Fort McMurray. Root-cause care for brain fog, dizziness, and headaches.">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .page-hero { position:relative; padding-top:calc(var(--navbar-height) + 5rem); padding-bottom:5rem; background-image:url('https://bodyfix99.com/wp-content/uploads/2026/02/back-pain-with-red-glowing-area-spine_1214360-6449.jpg'); background-size:cover; background-position:center; background-attachment:fixed; overflow:hidden; }
-    .page-hero::before { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,rgba(10,10,10,.88) 0%,rgba(10,10,10,.72) 60%,rgba(10,10,10,.95) 100%); z-index:1; }
-    .page-hero__content { position:relative; z-index:2; text-align:center; }
-    .page-hero__title { font-family:var(--font-heading); font-size:clamp(2.5rem,5vw,3.75rem); font-weight:700; color:var(--text-primary); line-height:1.1; margin-bottom:var(--space-md); text-shadow:0 4px 24px rgba(0,0,0,.8); }
-    .breadcrumb { display:flex; align-items:center; justify-content:center; gap:.5rem; font-family:var(--font-body); font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; color:var(--text-secondary); }
-    .breadcrumb a { color:var(--gold); } .breadcrumb a:hover { color:var(--gold-light); } .breadcrumb__sep { color:var(--border); }
-    .service-layout { display:grid; grid-template-columns:1fr 340px; gap:var(--space-xl); align-items:start; }
-    @media (max-width:1024px) { .service-layout { grid-template-columns:1fr; } }
-    .service-content h2 { font-size:clamp(1.6rem,3vw,2.25rem); margin-bottom:var(--space-md); margin-top:var(--space-xl); color:var(--text-primary); }
-    .service-content h2:first-child { margin-top:0; }
-    .service-content p { color:var(--text-secondary); line-height:1.85; font-size:1rem; margin-bottom:var(--space-md); max-width:none; }
-    .gold-list { list-style:none; margin-bottom:var(--space-lg); }
-    .gold-list li { display:flex; align-items:flex-start; gap:.75rem; padding:.6rem 0; border-bottom:1px solid var(--border); color:var(--text-secondary); font-size:.97rem; line-height:1.6; }
-    .gold-list li:last-child { border-bottom:none; }
-    .gold-list li::before { content:'◆'; color:var(--gold); font-size:.55rem; flex-shrink:0; margin-top:.45rem; }
-    .steps-grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--space-md); margin-bottom:var(--space-lg); }
-    @media (max-width:600px) { .steps-grid { grid-template-columns:1fr; } }
-    .step-card { background:var(--card-bg); border:1px solid var(--border); border-top:3px solid var(--gold); border-radius:var(--radius-md); padding:var(--space-lg); transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition); }
-    .step-card:hover { border-color:var(--gold); box-shadow:var(--shadow-gold); transform:translateY(-3px); }
-    .step-card__num { font-family:var(--font-heading); font-size:2.5rem; font-weight:700; color:var(--gold); line-height:1; margin-bottom:.5rem; opacity:.6; }
-    .step-card h3 { font-size:1.15rem; margin-bottom:.4rem; color:var(--text-primary); }
-    .step-card p { font-size:.88rem; color:var(--text-secondary); margin:0; max-width:none; }
-    .sidebar { position:sticky; top:calc(var(--navbar-height) + 1.5rem); display:flex; flex-direction:column; gap:var(--space-md); }
-    .sidebar-card { background:var(--card-bg); border:1px solid var(--border); border-radius:var(--radius-md); padding:var(--space-lg); }
-    .sidebar-card__title { font-family:var(--font-body); font-size:.7rem; font-weight:500; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:var(--space-md); padding-bottom:.5rem; border-bottom:1px solid rgba(201,168,76,.2); }
-    .sidebar-contact-item { display:flex; align-items:center; gap:.6rem; font-size:.875rem; color:var(--text-secondary); margin-bottom:.6rem; }
-    .sidebar-contact-item a { color:var(--text-secondary); } .sidebar-contact-item a:hover { color:var(--gold); } .sidebar-contact-item svg { color:var(--gold); flex-shrink:0; }
-    .sidebar-services-list { list-style:none; display:flex; flex-direction:column; gap:.4rem; }
-    .sidebar-services-list a { display:flex; align-items:center; gap:.5rem; font-size:.875rem; color:var(--text-secondary); padding:.45rem 0; border-bottom:1px solid var(--border); transition:color var(--transition),padding-left var(--transition); }
-    .sidebar-services-list a:last-child { border-bottom:none; } .sidebar-services-list a:hover { color:var(--gold); padding-left:6px; } .sidebar-services-list a.active { color:var(--gold); font-weight:500; } .sidebar-services-list a::before { content:'→'; font-size:.75rem; color:var(--gold); }
-    .footer-cta { background:var(--secondary-bg); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding-block:var(--space-xl); text-align:center; position:relative; overflow:hidden; }
-    .footer-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at center,rgba(201,168,76,.08) 0%,transparent 70%); pointer-events:none; }
-    .footer-cta h2 { font-size:clamp(1.75rem,3.5vw,2.75rem); margin-bottom:var(--space-sm); }
-    .footer-cta p { margin-inline:auto; margin-bottom:var(--space-lg); font-size:1.05rem; }
+    .page-hero {
+      position: relative;
+      padding-top: calc(var(--navbar-height) + 5rem);
+      padding-bottom: 5rem;
+      background-image: url('images/img6.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10, 10, 10, .88) 0%, rgba(10, 10, 10, .72) 60%, rgba(10, 10, 10, .95) 100%);
+      z-index: 1;
+    }
+
+    .page-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .page-hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+      text-shadow: 0 4px 24px rgba(0, 0, 0, .8);
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      font-family: var(--font-body);
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb a {
+      color: var(--gold);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--gold-light);
+    }
+
+    .breadcrumb__sep {
+      color: var(--border);
+    }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: var(--space-xl);
+      align-items: start;
+    }
+
+    @media (max-width:1024px) {
+      .service-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-content h2 {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      margin-bottom: var(--space-md);
+      margin-top: var(--space-xl);
+      color: var(--text-primary);
+    }
+
+    .service-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .service-content p {
+      color: var(--text-secondary);
+      line-height: 1.85;
+      font-size: 1rem;
+      margin-bottom: var(--space-md);
+      max-width: none;
+    }
+
+    .gold-list {
+      list-style: none;
+      margin-bottom: var(--space-lg);
+    }
+
+    .gold-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: .97rem;
+      line-height: 1.6;
+    }
+
+    .gold-list li:last-child {
+      border-bottom: none;
+    }
+
+    .gold-list li::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: .55rem;
+      flex-shrink: 0;
+      margin-top: .45rem;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    @media (max-width:600px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+
+    .step-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow-gold);
+      transform: translateY(-3px);
+    }
+
+    .step-card__num {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: .5rem;
+      opacity: .6;
+    }
+
+    .step-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: .4rem;
+      color: var(--text-primary);
+    }
+
+    .step-card p {
+      font-size: .88rem;
+      color: var(--text-secondary);
+      margin: 0;
+      max-width: none;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: calc(var(--navbar-height) + 1.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .sidebar-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+    }
+
+    .sidebar-card__title {
+      font-family: var(--font-body);
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: var(--space-md);
+      padding-bottom: .5rem;
+      border-bottom: 1px solid rgba(201, 168, 76, .2);
+    }
+
+    .sidebar-contact-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .875rem;
+      color: var(--text-secondary);
+      margin-bottom: .6rem;
+    }
+
+    .sidebar-contact-item a {
+      color: var(--text-secondary);
+    }
+
+    .sidebar-contact-item a:hover {
+      color: var(--gold);
+    }
+
+    .sidebar-contact-item svg {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .sidebar-services-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .sidebar-services-list a {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .875rem;
+      color: var(--text-secondary);
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color var(--transition), padding-left var(--transition);
+    }
+
+    .sidebar-services-list a:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-services-list a:hover {
+      color: var(--gold);
+      padding-left: 6px;
+    }
+
+    .sidebar-services-list a.active {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .sidebar-services-list a::before {
+      content: '→';
+      font-size: .75rem;
+      color: var(--gold);
+    }
+
+    .footer-cta {
+      background: var(--secondary-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding-block: var(--space-xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(201, 168, 76, .08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-cta p {
+      margin-inline: auto;
+      margin-bottom: var(--space-lg);
+      font-size: 1.05rem;
+    }
   </style>
 </head>
+
 <body>
   <div class="mobile-nav__overlay" id="mobileOverlay"></div>
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
@@ -60,7 +314,8 @@
   <header class="navbar" id="mainNavbar">
     <div class="navbar__inner">
       <a href="index.html" class="navbar__brand">
-        <img src="images/logo.png" alt="Bodyfix99 Logo" class="brand-logo" style="height:55px; width:auto; object-fit:contain;">
+        <img src="images/logo.png" alt="Bodyfix99 Logo" class="brand-logo"
+          style="height:55px; width:auto; object-fit:contain;">
         <div class="navbar__logo">BODYFIX<span>99</span></div>
       </a>
       <nav class="navbar__links" aria-label="Main navigation">
@@ -73,8 +328,10 @@
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-book-now navbar__cta">Book Now</a>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+      <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+        class="btn btn-book-now navbar__cta">Book Now</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"
+        aria-controls="mobileNav">
         <span class="hamburger__line"></span><span class="hamburger__line"></span><span class="hamburger__line"></span>
       </button>
     </div>
@@ -94,7 +351,10 @@
       <div class="container">
         <div class="service-layout">
           <article class="service-content">
-            <p class="lead fade-in">Concussions are complex injuries. Long after the initial rest period dictated by protocols, lingering post-concussion symptoms can drastically affect your quality of life. The brain is housed in the cranium and supported by the neck – and the structural mechanics of these areas can often hold the key to recovery.</p>
+            <p class="lead fade-in">Concussions are complex injuries. Long after the initial rest period dictated by
+              protocols, lingering post-concussion symptoms can drastically affect your quality of life. The brain is
+              housed in the cranium and supported by the neck – and the structural mechanics of these areas can often
+              hold the key to recovery.</p>
 
             <h2 class="fade-in">Post-Concussion Symptoms We Help With</h2>
             <ul class="gold-list fade-in">
@@ -107,23 +367,34 @@
             </ul>
 
             <h2 class="fade-in">Structural Approach to Concussion Recovery</h2>
-            <p class="fade-in">When a concussive force impacts the head, the energy is absorbed throughout the body. The upper cervical spine often locks up as a protective mechanism (whiplash effect), restricting blood and lymphatic flow to and from the brain. Additionally, the dural membrane that surrounds the brain and spinal cord can become strained, altering cerebrospinal fluid dynamics.</p>
-            <p class="fade-in">Our osteopathic approach focuses on normalizing the structural environment around the nervous system. By releasing mechanical restrictions in the cranium, neck, and thorax, we facilitate optimal circulatory and fluid drainage, removing barriers to the brain's natural healing process.</p>
+            <p class="fade-in">When a concussive force impacts the head, the energy is absorbed throughout the body. The
+              upper cervical spine often locks up as a protective mechanism (whiplash effect), restricting blood and
+              lymphatic flow to and from the brain. Additionally, the dural membrane that surrounds the brain and spinal
+              cord can become strained, altering cerebrospinal fluid dynamics.</p>
+            <p class="fade-in">Our osteopathic approach focuses on normalizing the structural environment around the
+              nervous system. By releasing mechanical restrictions in the cranium, neck, and thorax, we facilitate
+              optimal circulatory and fluid drainage, removing barriers to the brain's natural healing process.</p>
 
             <h2 class="fade-in">Cranial Sacral Therapy</h2>
-            <p class="fade-in">Cranial sacral therapy is a cornerstone modality in our post-concussion treatment. This extremely gentle, non-invasive technique evaluates and enhances the functioning of the craniosacral system – the membranes and cerebrospinal fluid that surround and protect the brain and spinal cord. It encourages the dissipation of residual trauma, helping the central nervous system to calm down, down-regulate, and stabilize.</p>
+            <p class="fade-in">Cranial sacral therapy is a cornerstone modality in our post-concussion treatment. This
+              extremely gentle, non-invasive technique evaluates and enhances the functioning of the craniosacral system
+              – the membranes and cerebrospinal fluid that surround and protect the brain and spinal cord. It encourages
+              the dissipation of residual trauma, helping the central nervous system to calm down, down-regulate, and
+              stabilize.</p>
 
             <h2 class="fade-in">90-Minute Session – What Happens</h2>
             <div class="steps-grid">
               <div class="step-card fade-in delay-1">
                 <div class="step-card__num">01</div>
                 <h3>Thorough Assessment</h3>
-                <p>A highly sensitive palpation assessment of the cranial sutures, upper cervical joints, and fascial restrictions.</p>
+                <p>A highly sensitive palpation assessment of the cranial sutures, upper cervical joints, and fascial
+                  restrictions.</p>
               </div>
               <div class="step-card fade-in delay-2">
                 <div class="step-card__num">02</div>
                 <h3>Targeted Hands-On Treatment</h3>
-                <p>Gentle cranial mechanics, dural release, and upper-cervical balancing to support nervous system regulation.</p>
+                <p>Gentle cranial mechanics, dural release, and upper-cervical balancing to support nervous system
+                  regulation.</p>
               </div>
               <div class="step-card fade-in delay-3">
                 <div class="step-card__num">03</div>
@@ -133,28 +404,41 @@
               <div class="step-card fade-in delay-4">
                 <div class="step-card__num">04</div>
                 <h3>Simple Plan to Make Results Stick</h3>
-                <p>Guidance on pacing strategies, sensory management, and gentle exercises to support the nervous system between sessions.</p>
+                <p>Guidance on pacing strategies, sensory management, and gentle exercises to support the nervous system
+                  between sessions.</p>
               </div>
             </div>
             <div class="fade-in">
-              <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Your Concussion Session</a>
+              <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+                class="btn btn-primary btn-lg">Book Your Concussion Session</a>
             </div>
           </article>
 
           <aside class="sidebar">
             <div class="sidebar-card">
               <div class="sidebar-card__title">Book Your Session</div>
-              <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:var(--space-sm);max-width:none;">Find support for lingering post-concussion symptoms. Book a 90-minute session today.</p>
-              <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-primary btn-full">Book Online</a>
+              <p style="font-size:.9rem;color:var(--text-secondary);margin-bottom:var(--space-sm);max-width:none;">Find
+                support for lingering post-concussion symptoms. Book a 90-minute session today.</p>
+              <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener"
+                class="btn btn-primary btn-full">Book Online</a>
             </div>
             <div class="sidebar-card">
               <div class="sidebar-card__title">Contact Us</div>
               <div class="sidebar-contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12 19.79 19.79 0 0 1 1.14 3.38 2 2 0 0 1 3.12 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12 19.79 19.79 0 0 1 1.14 3.38 2 2 0 0 1 3.12 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
                 <a href="tel:+17803356705">780-335-6705</a>
               </div>
               <div class="sidebar-contact-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
                 <a href="mailto:fixme@bodyfix99.com">fixme@bodyfix99.com</a>
               </div>
             </div>
@@ -177,7 +461,8 @@
       <div class="container">
         <h2 class="gradient-text" style="display:inline-block">Stop Managing Pain, Start Fixing It</h2>
         <p>Book a 90-minute osteopathic session in Fort McMurray and get lasting results.</p>
-        <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book Now</a>
+        <a href="http://ramizosteopath.setmore.com/r" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book
+          Now</a>
       </div>
     </div>
   </main>
@@ -192,27 +477,44 @@
             <div style="display:flex; align-items:center; gap:12px; margin-bottom:15px;">
               <img src="images/logo.png" alt="Bodyfix99 Logo" style="height:55px; width:auto; object-fit:contain;">
               <div>
-                <div style="font-family:'Cormorant Garamond',serif; color:#c9a84c; font-size:22px; letter-spacing:3px;">BODYFIX<span style="color:#f5f5f5;">99</span></div>
-                <div style="font-size:10px; color:#a0a0a0; letter-spacing:2px; text-transform:uppercase;">Osteopathic Manual Therapy</div>
+                <div style="font-family:'Cormorant Garamond',serif; color:#c9a84c; font-size:22px; letter-spacing:3px;">
+                  BODYFIX<span style="color:#f5f5f5;">99</span></div>
+                <div style="font-size:10px; color:#a0a0a0; letter-spacing:2px; text-transform:uppercase;">Osteopathic
+                  Manual Therapy</div>
               </div>
             </div>
-            <p style="color:#a0a0a0; font-size:13px; line-height:1.6; margin-bottom:20px;">Root-cause osteopathic care for chronic pain, mobility &amp; injuries in Fort McMurray.</p>
-            <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px; padding:12px; background:rgba(201,168,76,0.08); border-left:2px solid #c9a84c; border-radius:4px;">
-              <img src="images/nicholas-berisha.jpeg" alt="R. Nicholas Berisha" style="width:50px; height:50px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid #c9a84c; flex-shrink:0;">
+            <p style="color:#a0a0a0; font-size:13px; line-height:1.6; margin-bottom:20px;">Root-cause osteopathic care
+              for chronic pain, mobility &amp; injuries in Fort McMurray.</p>
+            <div
+              style="display:flex; align-items:center; gap:12px; margin-bottom:20px; padding:12px; background:rgba(201,168,76,0.08); border-left:2px solid #c9a84c; border-radius:4px;">
+              <img src="images/nicholas-berisha.jpeg" alt="R. Nicholas Berisha"
+                style="width:50px; height:50px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid #c9a84c; flex-shrink:0;">
               <div>
                 <div style="color:#f5f5f5; font-size:13px; font-weight:500;">R. Nicholas Berisha</div>
-                <div style="color:#c9a84c; font-size:11px; letter-spacing:1px; text-transform:uppercase;">Osteopathic Practitioner</div>
+                <div style="color:#c9a84c; font-size:11px; letter-spacing:1px; text-transform:uppercase;">Osteopathic
+                  Practitioner</div>
               </div>
             </div>
             <div class="footer__socials">
               <a href="#" aria-label="Facebook" class="footer__social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
               </a>
               <a href="#" aria-label="Instagram" class="footer__social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
               </a>
               <a href="#" aria-label="LinkedIn" class="footer__social-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
               </a>
             </div>
           </div>
@@ -275,4 +577,5 @@
   </footer>
   <script src="js/main.js"></script>
 </body>
+
 </html>
