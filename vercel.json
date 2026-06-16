@@ -2,6 +2,12 @@
   "redirects": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "bodyfix99.com"
+        }
+      ],
       "destination": "https://www.bodyfix99.com/$1",
       "permanent": true
     }
